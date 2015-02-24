@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="server=sunflower.arvixe.com;database=UofLVaccine;uid=j0sanc02;password=sanchez819;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\jpapp_000\\Documents\\GitHub\\ULVC\\UniversityofLouisvilleVaccine\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="UniversityofLouisvilleVaccine.DataContexts.ApplicationDbContext-Web.config Connection String" description="UniversityofLouisvilleVaccine.DataContexts.ApplicationDbContext Connection String used in web.config by the application to access the database." defaultValue="UniversityofLouisvilleVaccine.DataContexts.ApplicationDbContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\jpapp_000\\Documents\\GitHub\\ULVC\\UniversityofLouisvilleVaccine\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='UniversityofLouisvilleVaccine.DataContexts.ApplicationDbContext']/@connectionString" />
+  </parameter>
+  <parameter name="UniversityofLouisvilleVaccine.DataContexts.VaccineDBContext-Web.config Connection String" description="UniversityofLouisvilleVaccine.DataContexts.VaccineDBContext Connection String used in web.config by the application to access the database." defaultValue="UniversityofLouisvilleVaccine.DataContexts.VaccineDBContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\jpapp_000\\Documents\\GitHub\\ULVC\\UniversityofLouisvilleVaccine\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='UniversityofLouisvilleVaccine.DataContexts.VaccineDBContext']/@connectionString" />
+  </parameter>
+  <parameter name="UniversityofLouisvilleVaccine.DataContexts.VaccineNotificationDB-Web.config Connection String" description="UniversityofLouisvilleVaccine.DataContexts.VaccineNotificationDB Connection String used in web.config by the application to access the database." defaultValue="UniversityofLouisvilleVaccine.DataContexts.VaccineNotificationDB_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\jpapp_000\\Documents\\GitHub\\ULVC\\UniversityofLouisvilleVaccine\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='UniversityofLouisvilleVaccine.DataContexts.VaccineNotificationDB']/@connectionString" />
+  </parameter>
+  <parameter name="UniversityofLouisvilleVaccine.DataContexts.VaccineUseDBContext-Web.config Connection String" description="UniversityofLouisvilleVaccine.DataContexts.VaccineUseDBContext Connection String used in web.config by the application to access the database." defaultValue="UniversityofLouisvilleVaccine.DataContexts.VaccineUseDBContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\jpapp_000\\Documents\\GitHub\\ULVC\\UniversityofLouisvilleVaccine\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='UniversityofLouisvilleVaccine.DataContexts.VaccineUseDBContext']/@connectionString" />
+  </parameter>
+  <parameter name="UniversityofLouisvilleVaccine.DataContexts.VendorDBContext-Web.config Connection String" description="UniversityofLouisvilleVaccine.DataContexts.VendorDBContext Connection String used in web.config by the application to access the database." defaultValue="UniversityofLouisvilleVaccine.DataContexts.VendorDBContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\jpapp_000\\Documents\\GitHub\\ULVC\\UniversityofLouisvilleVaccine\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='UniversityofLouisvilleVaccine.DataContexts.VendorDBContext']/@connectionString" />
+  </parameter>
+</parameters>

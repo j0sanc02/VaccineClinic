@@ -1,0 +1,75 @@
+﻿@model UniversityofLouisvilleVaccine.Models.VaccineUse
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VaccineUse</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vaccineID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vaccineID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lotNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lotNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.patientID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.patientID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinjectionSite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinjectionSite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RinjectionSite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RinjectionSite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.VaccineUseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VaccineUseDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VaccineUseId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

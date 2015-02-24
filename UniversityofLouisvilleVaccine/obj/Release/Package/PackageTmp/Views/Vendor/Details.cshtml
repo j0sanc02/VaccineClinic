@@ -1,0 +1,67 @@
+﻿@model UniversityofLouisvilleVaccine.Models.Vendor
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vendor</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vendorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vendorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vendorPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vendorPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vendorFax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vendorFax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vendorEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vendorEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vendorWebsite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vendorWebsite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vendorAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vendorAddress)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.vendorID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

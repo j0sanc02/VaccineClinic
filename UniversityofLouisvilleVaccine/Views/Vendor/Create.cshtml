@@ -1,0 +1,90 @@
+﻿@model UniversityofLouisvilleVaccine.Models.Vendor
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Vendor</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.vendorID, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.vendorID)
+                @Html.ValidationMessageFor(model => model.vendorID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.vendorName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.vendorName)
+                @Html.ValidationMessageFor(model => model.vendorName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.vendorPhone, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.vendorPhone)
+                @Html.ValidationMessageFor(model => model.vendorPhone)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.vendorFax, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.vendorFax)
+                @Html.ValidationMessageFor(model => model.vendorFax)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.vendorEmail, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.vendorEmail)
+                @Html.ValidationMessageFor(model => model.vendorEmail)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.vendorWebsite, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.vendorWebsite)
+                @Html.ValidationMessageFor(model => model.vendorWebsite)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.vendorAddress, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.vendorAddress)
+                @Html.ValidationMessageFor(model => model.vendorAddress)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

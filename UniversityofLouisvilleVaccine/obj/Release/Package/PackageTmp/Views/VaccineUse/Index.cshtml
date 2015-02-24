@@ -1,0 +1,70 @@
+﻿@model IEnumerable<UniversityofLouisvilleVaccine.Models.VaccineUse>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.vaccineID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lotNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.patientID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LinjectionSite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RinjectionSite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VaccineUseDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.vaccineID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lotNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.patientID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinjectionSite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RinjectionSite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VaccineUseDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.VaccineUseId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.VaccineUseId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.VaccineUseId })
+        </td>
+    </tr>
+}
+
+</table>
