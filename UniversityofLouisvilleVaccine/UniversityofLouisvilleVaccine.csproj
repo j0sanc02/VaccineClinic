@@ -259,7 +259,7 @@
     <Content Include="Content\Images\ico\apple-touch-icon-57-precomposed.png" />
     <Content Include="Content\Images\ico\apple-touch-icon-72-precomposed.png" />
     <Content Include="Content\Images\ico\favicon.ico" />
-    <Content Include="Content\Images\main-feature.png" />
+    <Content Include="Content\Images\main.png" />
     <Content Include="Content\Images\portfolio\01.jpg" />
     <Content Include="Content\Images\portfolio\02.jpg" />
     <Content Include="Content\Images\portfolio\03.jpg" />
