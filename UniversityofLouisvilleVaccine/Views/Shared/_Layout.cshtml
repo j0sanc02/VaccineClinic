@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - University of Louisville Vaccine Clinic</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/fullcalendarcss")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -40,7 +41,7 @@
                             <li>@Html.ActionLink("Vendor Info", "Index", "Vendor")</li>
                         </ul>
                     </li>
-                        <li>@Html.ActionLink("Scheduling", "Index", "Schedule")</li>
+                        <li>@Html.ActionLink("Appointments", "Index", "Event")</li>
                         <li>@Html.ActionLink("Grants", "Index", "Grants")</li>
                         <li>@Html.ActionLink("Users", "Index", "User")</li>
 
@@ -59,6 +60,7 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/fullcalendarjs")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
