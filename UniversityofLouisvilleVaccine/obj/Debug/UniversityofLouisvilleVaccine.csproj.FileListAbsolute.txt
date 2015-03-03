@@ -486,3 +486,5 @@ C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.Migrations.InitialCreate.resources
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VaccineUseMigrations.Addedinjectionsites.resources
 >>>>>>> 5ee784cb5f7ece64f1c34fa14397de6e20635675
+C:\Users\Tyler\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VaccineUseMigrations.Addedinjectionsites.resources
+C:\Users\Tyler\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.Migrations.InitialCreate.resources
