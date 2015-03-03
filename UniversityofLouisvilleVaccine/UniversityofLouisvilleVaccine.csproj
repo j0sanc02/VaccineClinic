@@ -157,7 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\Controllers\EventController.cs" />
+    <Compile Include="App_Start\Controllers\ApptController.cs" />
     <Compile Include="App_Start\Controllers\IndexController.cs" />
     <Compile Include="App_Start\Controllers\LandingController.cs" />
     <Compile Include="App_Start\Controllers\VaccineUseController.cs" />
@@ -212,17 +212,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503021917359_Event Initial.cs" />
-    <Compile Include="Migrations\201503021917359_Event Initial.Designer.cs">
-      <DependentUpon>201503021917359_Event Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201503021952115_Second Event.cs" />
-    <Compile Include="Migrations\201503021952115_Second Event.Designer.cs">
-      <DependentUpon>201503021952115_Second Event.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Vaccine.cs" />
     <Compile Include="Models\VaccineNotification.cs" />
@@ -389,11 +380,12 @@
     <Content Include="Views\Vendor\Details.cshtml" />
     <Content Include="Views\Vendor\Edit.cshtml" />
     <Content Include="Views\Vendor\Index.cshtml" />
-    <Content Include="Views\Event\Create.cshtml" />
-    <Content Include="Views\Event\Delete.cshtml" />
-    <Content Include="Views\Event\Details.cshtml" />
-    <Content Include="Views\Event\Edit.cshtml" />
-    <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Appt\Create.cshtml" />
+    <Content Include="Views\Appt\Delete.cshtml" />
+    <Content Include="Views\Appt\Details.cshtml" />
+    <Content Include="Views\Appt\Edit.cshtml" />
+    <Content Include="Views\Appt\Index.cshtml" />
+    <Content Include="Views\Appt\PatientCreate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -430,12 +422,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VendorMigrations\201502230239179_Initial Create.resx">
       <DependentUpon>201502230239179_Initial Create.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503021917359_Event Initial.resx">
-      <DependentUpon>201503021917359_Event Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503021952115_Second Event.resx">
-      <DependentUpon>201503021952115_Second Event.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

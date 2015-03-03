@@ -8,13 +8,13 @@ using System.Web;
 
 namespace UniversityofLouisvilleVaccine.Models
 {
-    public class Event
+    public class Appointment
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
-
+        [Display(Name = "Name")]
         public string title { get; set; }
 
         [Display(Name = "Start Date")]
@@ -37,12 +37,11 @@ namespace UniversityofLouisvilleVaccine.Models
         public string end { get; set; }
 
         public bool allDay { get; set; }
-
     }
 
-    public class EventDBContext : DbContext
+    public class ApptDBContext : DbContext
     {
-        public DbSet<Event> Events { get; set; }
+        public DbSet<Appointment> Appointments { get; set; }
     }
 
 }

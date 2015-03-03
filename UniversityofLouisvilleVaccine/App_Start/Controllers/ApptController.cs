@@ -10,107 +10,127 @@ using UniversityofLouisvilleVaccine.Models;
 
 namespace UniversityofLouisvilleVaccine.App_Start.Controllers
 {
-    public class EventController : Controller
+    public class ApptController : Controller
     {
-        private EventDBContext db = new EventDBContext();
+        private ApptDBContext db = new ApptDBContext();
 
-        // GET: /Event/
+        // GET: /Appt/
         public ActionResult Index()
         {
-            return View(db.Events.ToList());
+            return View(db.Appointments.ToList());
         }
 
-        // GET: /Event/Details/5
-        public ActionResult Details(int id)
+        // GET: /Appt/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Event @event = db.Events.Find(id);
-            if (@event == null)
+            Appointment appointment = db.Appointments.Find(id);
+            if (appointment == null)
             {
                 return HttpNotFound();
             }
-            return View(@event);
+            return View(appointment);
         }
 
-        // GET: /Event/Create
+        // GET: /Appt/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: /Event/Create
+        // POST: /Appt/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="id,title,start,hour,min,end,allDay")] Event @event)
+        public ActionResult Create([Bind(Include="id,title,start,hour,min,end,allDay")] Appointment appointment)
         {
             if (ModelState.IsValid)
             {
-                db.Events.Add(@event);
+                db.Appointments.Add(appointment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(@event);
+            return View(appointment);
         }
 
-        // GET: /Event/Edit/5
-        public ActionResult Edit(int id)
+        // GET: /Appt/Create
+        public ActionResult PatientCreate()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult PatientCreate([Bind(Include = "id,title,start,hour,min,end,allDay")] Appointment appointment)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Appointments.Add(appointment);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(appointment);
+        }
+
+        // GET: /Appt/Edit/5
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Event @event = db.Events.Find(id);
-            if (@event == null)
+            Appointment appointment = db.Appointments.Find(id);
+            if (appointment == null)
             {
                 return HttpNotFound();
             }
-            return View(@event);
+            return View(appointment);
         }
 
-        // POST: /Event/Edit/5
+        // POST: /Appt/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="id,title,start,hour,min,end,allDay")] Event @event)
+        public ActionResult Edit([Bind(Include="id,title,start,hour,min,end,allDay")] Appointment appointment)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(@event).State = EntityState.Modified;
+                db.Entry(appointment).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(@event);
+            return View(appointment);
         }
 
-        // GET: /Event/Delete/5
-        public ActionResult Delete(string id)
+        // GET: /Appt/Delete/5
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Event @event = db.Events.Find(id);
-            if (@event == null)
+            Appointment appointment = db.Appointments.Find(id);
+            if (appointment == null)
             {
                 return HttpNotFound();
             }
-            return View(@event);
+            return View(appointment);
         }
 
-        // POST: /Event/Delete/5
+        // POST: /Appt/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Event @event = db.Events.Find(id);
-            db.Events.Remove(@event);
+            Appointment appointment = db.Appointments.Find(id);
+            db.Appointments.Remove(appointment);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -123,7 +143,5 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
             }
             base.Dispose(disposing);
         }
-
-
     }
 }
