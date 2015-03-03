@@ -1,0 +1,108 @@
+﻿@model IEnumerable<UniversityofLouisvilleVaccine.Models.Appointment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-md-5">
+    <br />
+    <br />
+    <br />
+    <h3>Index</h3>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.start)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.min)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.end)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.allDay)
+                </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.start)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.min)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.end)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.allDay)
+                    </td>*@
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<div class="col-md-7">
+    <br />
+    <br />
+    <br />
+    <h3>Appointments</h3>
+    <div id="calendar"></div>
+</div>
+
+
+@section scripts{
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+
+                //theme: true,
+
+                defaultView: 'agendaDay',
+                editable: true,
+                allDaySlot: false,
+                selectable: true,
+                slotMinutes: 15,
+                defaultTimedEventDuration: 15,
+                forceEventDuration: true,
+                //eventSource: [events]
+                events: "/home/getevents"
+            });
+        });
+
+
+    </script>
+}

@@ -10,7 +10,7 @@
     <WebStackScaffolding_DbContextTypeFullName>UniversityofLouisvilleVaccine.DataContexts.ApplicationDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
     <ProjectView>ShowAllFiles</ProjectView>
-    <NameOfLastUsedPublishProfile>jasonsanchez819.com - WebDeploy2</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>File Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
