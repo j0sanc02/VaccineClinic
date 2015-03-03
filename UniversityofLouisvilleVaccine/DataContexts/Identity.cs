@@ -1,8 +1,4 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using UniversityofLouisvilleVaccine.Models;
 
 namespace UniversityofLouisvilleVaccine.DataContexts
@@ -14,6 +10,14 @@ namespace UniversityofLouisvilleVaccine.DataContexts
         {
 
         }
+
+        public System.Data.Entity.DbSet<UniversityofLouisvilleVaccine.Models.EditUserViewModel> EditUserViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<UniversityofLouisvilleVaccine.Models.RoleViewModel> RoleViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<UniversityofLouisvilleVaccine.Models.EditRoleViewModel> EditRoleViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<UniversityofLouisvilleVaccine.Models.SelectRoleEditorViewModel> SelectRoleEditorViewModels { get; set; }
 
 
     }

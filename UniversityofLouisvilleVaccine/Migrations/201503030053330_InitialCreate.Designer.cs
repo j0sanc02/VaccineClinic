@@ -7,13 +7,13 @@ namespace UniversityofLouisvilleVaccine.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.2-31219")]
-    public sealed partial class EventInitial : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(EventInitial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201503021917359_Event Initial"; }
+            get { return "201503030053330_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

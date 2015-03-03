@@ -27,12 +27,36 @@ namespace UniversityofLouisvilleVaccine.Models
         [Display(Name = "Patient ID")]
         public string patientID { get; set; }
 
-        [Required]
+
         [Display(Name = "Left Arm")]
         public bool LinjectionSite { get; set; }
 
         [Display(Name = "Right Arm")]
         public bool RinjectionSite { get; set; }
+     
+        [Display(Name = "Left - Intradermal")]
+        public bool LIntradermal { get; set; }
+
+        [Display(Name = "Right - Intradermal")]
+        public bool RIntradermal { get; set; }
+        
+        [Display(Name = "Left - Intramuscular")]
+        public bool LIntramuscular { get; set; }
+
+        [Display(Name = "Right - Intramuscular")]
+        public bool RIntramuscular { get; set; }
+
+        [Display(Name = "Left - Subcutaneous")]
+        public bool lsub{ get; set; }
+
+        [Display(Name = "Right - Subcutaneous")]
+        public bool rsub { get; set; }
+
+        [Display(Name = "Left - Intranasal")]
+        public bool lnasal { get; set; }
+
+        [Display(Name = "Right - Intranasal")]
+        public bool rnasal { get; set; }
 
         [Required]
         [Display(Name = "Quantity")]

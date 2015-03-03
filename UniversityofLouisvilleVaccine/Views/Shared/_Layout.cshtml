@@ -23,7 +23,7 @@
             <div class="navbar-header">
                 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar">Test</span>
+                    <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
@@ -41,11 +41,14 @@
                             <li>@Html.ActionLink("Vendor Info", "Index", "Vendor")</li>
                         </ul>
                     </li>
-                        <li>@Html.ActionLink("Appointments", "Index", "Event")</li>
+                        <li>@Html.ActionLink("Appointments", "Index", "Appt")</li>
+                        <li>@Html.ActionLink("Schedule an Appointment", "PatientCreate", "Appt")</li>
                         <li>@Html.ActionLink("Grants", "Index", "Grants")</li>
-                        <li>@Html.ActionLink("Users", "Index", "User")</li>
-
-                        @Html.Partial("_LoginPartial")
+                        @*<li>@Html.ActionLink("Users", "Index", "User")</li>*@
+                        <li>@Html.ActionLink("Users", "Index", "Account")</li>
+                        <li>@Html.ActionLink("Roles", "Index", "Roles")</li>
+                        
+                    @Html.Partial("_LoginPartial")
                 </ul>
 
             </div>

@@ -12,12 +12,13 @@ using UniversityofLouisvilleVaccine.Models;
 
 namespace UniversityofLouisvilleVaccine.Controllers
 {
-    [Authorize]
+
     public class VaccineController : Controller
     {
         private VaccineDBContext db = new VaccineDBContext();
 
         // GET: /Vaccine/
+        [Authorize(Roles = "Admin, Executive, ProgramStaff, Researcher")]
         public ActionResult Index(string lotnumber, string searchString)
         {
             var lotlist = new List<string>();
@@ -46,6 +47,7 @@ namespace UniversityofLouisvilleVaccine.Controllers
         }
 
         // GET: /Vaccine/Details/5
+        [Authorize(Roles = "Admin, Executive, ProgramStaff, Researcher")]
         public ActionResult Details(int id)
         {
             if (id == null)
@@ -61,6 +63,7 @@ namespace UniversityofLouisvilleVaccine.Controllers
         }
 
         // GET: /Vaccine/Create
+        [Authorize(Roles = "Admin, Executive, ProgramStaff, Researcher")]
         public ActionResult Create()
         {
             return View();
@@ -71,6 +74,7 @@ namespace UniversityofLouisvilleVaccine.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Executive, ProgramStaff, Researcher")]
         public ActionResult Create([Bind(Include="ID,vaccineID,vaccineName,dateReceived,CPT,ICD9Code,NDC,leadTime,lotNumber,numofDoses,salesPrice,expDate")] Vaccine vaccine)
         {
             if (ModelState.IsValid)
@@ -84,6 +88,7 @@ namespace UniversityofLouisvilleVaccine.Controllers
         }
 
         // GET: /Vaccine/Edit/5
+        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult Edit(int id)
         {
             if (id == null)
@@ -104,6 +109,7 @@ namespace UniversityofLouisvilleVaccine.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult Edit([Bind(Include="ID,vaccineID,vaccineName,dateReceived,CPT,ICD9Code,NDC,leadTime,lotNumber,numofDoses,salesPrice,expDate")] Vaccine vaccine)
         {
             if (ModelState.IsValid)
@@ -116,6 +122,7 @@ namespace UniversityofLouisvilleVaccine.Controllers
         }
 
         // GET: /Vaccine/Delete/5
+        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult Delete(int id)
         {
             if (id == null)
@@ -133,6 +140,7 @@ namespace UniversityofLouisvilleVaccine.Controllers
         // POST: /Vaccine/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult DeleteConfirmed(int id)
         {
             Vaccine vaccine = db.Vaccines.Find(id);

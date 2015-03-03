@@ -3,15 +3,15 @@ namespace UniversityofLouisvilleVaccine.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class EventInitial : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.Events",
+                "dbo.Appointments",
                 c => new
                     {
-                        id = c.String(nullable: false, maxLength: 128),
+                        id = c.Int(nullable: false, identity: true),
                         title = c.String(),
                         start = c.String(),
                         hour = c.Double(nullable: false),
@@ -25,7 +25,7 @@ namespace UniversityofLouisvilleVaccine.Migrations
         
         public override void Down()
         {
-            DropTable("dbo.Events");
+            DropTable("dbo.Appointments");
         }
     }
 }

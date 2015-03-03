@@ -7,7 +7,7 @@ using UniversityofLouisvilleVaccine.Models;
 
 namespace UniversityofLouisvilleVaccine.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin, Executive, ProgramStaff, Researcher")]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -42,17 +42,17 @@ namespace UniversityofLouisvilleVaccine.Controllers
             return Json(rows, JsonRequestBehavior.AllowGet);
         }
 
-        private List<Event> GetEvents()
+        private List<Appointment> GetEvents()
         {
-            List<Event> eventList = new List<Event>();
-            EventDBContext db = new EventDBContext();
+            List<Appointment> eventList = new List<Appointment>();
+            ApptDBContext db = new ApptDBContext();
 
-            foreach (var vs in db.Events)
+            foreach (var vs in db.Appointments)
             {
                 DateTime start = Convert.ToDateTime(vs.start).AddHours(vs.hour).AddMinutes(vs.min);
                 DateTime endtime = start.AddMinutes(15);
 
-                Event newEvent = new Event
+                Appointment newEvent = new Appointment
                 {
 
                     id = vs.id,
