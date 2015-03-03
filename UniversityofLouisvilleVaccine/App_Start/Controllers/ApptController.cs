@@ -10,17 +10,20 @@ using UniversityofLouisvilleVaccine.Models;
 
 namespace UniversityofLouisvilleVaccine.App_Start.Controllers
 {
+    
     public class ApptController : Controller
     {
         private ApptDBContext db = new ApptDBContext();
 
         // GET: /Appt/
+        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult Index()
         {
             return View(db.Appointments.ToList());
         }
 
         // GET: /Appt/Details/5
+        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +39,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         }
 
         // GET: /Appt/Create
+        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult Create()
         {
             return View();
@@ -46,6 +50,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult Create([Bind(Include="id,title,start,hour,min,end,allDay")] Appointment appointment)
         {
             if (ModelState.IsValid)
@@ -59,6 +64,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         }
 
         // GET: /Appt/Create
+        [Authorize(Roles = "Admin, Executive, ProgramStaff, Patient")]
         public ActionResult PatientCreate()
         {
             return View();
@@ -66,19 +72,21 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Executive, ProgramStaff, Patient")]
         public ActionResult PatientCreate([Bind(Include = "id,title,start,hour,min,end,allDay")] Appointment appointment)
         {
             if (ModelState.IsValid)
             {
                 db.Appointments.Add(appointment);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("PatientCreate");
             }
 
             return View(appointment);
         }
 
         // GET: /Appt/Edit/5
+        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -98,6 +106,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult Edit([Bind(Include="id,title,start,hour,min,end,allDay")] Appointment appointment)
         {
             if (ModelState.IsValid)
@@ -110,6 +119,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         }
 
         // GET: /Appt/Delete/5
+        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -127,6 +137,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         // POST: /Appt/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult DeleteConfirmed(int id)
         {
             Appointment appointment = db.Appointments.Find(id);

@@ -7,7 +7,7 @@ using UniversityofLouisvilleVaccine.Models;
 
 namespace UniversityofLouisvilleVaccine.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin, Executive, ProgramStaff, Researcher")]
     public class HomeController : Controller
     {
         public ActionResult Index()

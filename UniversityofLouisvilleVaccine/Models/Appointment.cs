@@ -42,6 +42,8 @@ namespace UniversityofLouisvilleVaccine.Models
     public class ApptDBContext : DbContext
     {
         public DbSet<Appointment> Appointments { get; set; }
+
+       
     }
 
 }
