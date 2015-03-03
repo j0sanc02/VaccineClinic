@@ -54,8 +54,9 @@
                         <li class="scroll"><a href="#about">About</a></li>
                         <li class="scroll"><a href="#meet-team">Team</a></li>
                         <li class="scroll"><a href="#partners">Our Partners</a></li>
+                        <li class="scroll"><a href="#patients">New Patients</a></li>
                         <li class="scroll"><a href="#get-in-touch">Contact</a></li>
-                        <li>@Html.ActionLink("For Staff", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Log In", "Index", "Home")</li>
                     </ul>
                 </div>
             </div><!--/.container-->
@@ -396,7 +397,33 @@
                 </div>
             </div>
             <br />
-    </section><!--/#pricing-->
+    </section><!--/#partners-->
+
+    <!--/#patients-->
+    <section id="patients" style="padding-top:106px;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">New Patients</h2>
+                <p class="text-center wow fadeInDown"></p>
+            </div>
+            <div class="row">
+                <div class="col-sm-9 col-md-3 col-md-offset-3">
+                    <a class="btn btn-primary btn-lg " action=@Html.ActionLink("Create Account/Register", "Index", "Home")</a>
+                </div>
+
+            <div class="col-sm-9 col-md-3">
+                <a class="btn btn-primary btn-lg " href="~/Content/patientForm.pdf">Download Patient History Form</a>
+            </div>
+            </div>
+            </div>
+            <br />
+        <br />  
+        <br />
+        
+    </section><!--/#patients-->
+
+
+
     <section id="get-in-touch">
         <div class="container">
             <div class="section-header">
