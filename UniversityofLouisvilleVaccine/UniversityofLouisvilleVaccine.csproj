@@ -203,6 +203,10 @@
     <Compile Include="DataContexts\VaccineUseMigrations\201502230248440_Initial Create.Designer.cs">
       <DependentUpon>201502230248440_Initial Create.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataContexts\VaccineUseMigrations\201503030619227_Added injectionsites.cs" />
+    <Compile Include="DataContexts\VaccineUseMigrations\201503030619227_Added injectionsites.Designer.cs">
+      <DependentUpon>201503030619227_Added injectionsites.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataContexts\VaccineUseMigrations\Configuration.cs" />
     <Compile Include="DataContexts\Vendor.cs" />
     <Compile Include="DataContexts\VendorMigrations\201502230239179_Initial Create.cs" />
@@ -439,6 +443,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VaccineUseMigrations\201502230248440_Initial Create.resx">
       <DependentUpon>201502230248440_Initial Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\VaccineUseMigrations\201503030619227_Added injectionsites.resx">
+      <DependentUpon>201503030619227_Added injectionsites.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VendorMigrations\201502230239179_Initial Create.resx">
       <DependentUpon>201502230239179_Initial Create.cs</DependentUpon>

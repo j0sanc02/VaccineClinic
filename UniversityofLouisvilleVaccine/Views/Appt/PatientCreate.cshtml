@@ -70,6 +70,21 @@
 
 
 @section scripts{
+
+@if (ViewBag.Message != null)
+{
+    <script>
+
+$(document).ready(function(){
+
+alert('@ViewBag.Message');
+   
+});
+
+    </script>
+    
+}
+
     <script type="text/javascript">
 
 

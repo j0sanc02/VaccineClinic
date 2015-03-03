@@ -5,6 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<br />
+<br />
+<br />
 <h2>Edit</h2>
 
 
@@ -55,6 +58,70 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.RinjectionSite)
                 @Html.ValidationMessageFor(model => model.RinjectionSite)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LIntradermal, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LIntradermal)
+                @Html.ValidationMessageFor(model => model.LIntradermal)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RIntradermal, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RIntradermal)
+                @Html.ValidationMessageFor(model => model.RIntradermal)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LIntramuscular, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LIntramuscular)
+                @Html.ValidationMessageFor(model => model.LIntramuscular)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RIntramuscular, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RIntramuscular)
+                @Html.ValidationMessageFor(model => model.RIntramuscular)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.lnasal, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.lnasal)
+                @Html.ValidationMessageFor(model => model.lnasal)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.rnasal, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.rnasal)
+                @Html.ValidationMessageFor(model => model.rnasal)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.lsub, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.lsub)
+                @Html.ValidationMessageFor(model => model.lsub)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.rsub, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.rsub)
+                @Html.ValidationMessageFor(model => model.rsub)
             </div>
         </div>
 

@@ -417,3 +417,4 @@ C:\Users\jpapp_000\Documents\Visual Studio 2013\Projects\VaccineClinic\Universit
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.IdentityMigrations.SecondCreate.resources
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.IdentityMigrations.SecondCreate1.resources
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.Migrations.InitialCreate.resources
+C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VaccineUseMigrations.Addedinjectionsites.resources

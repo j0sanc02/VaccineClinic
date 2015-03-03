@@ -52,7 +52,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin, Executive, ProgramStaff")]
-        public ActionResult Create([Bind(Include = "VaccineUseId,vaccineID,lotNumber,patientID,LinjectionSite,RinjectionSite,quantity,VaccineUseDate")] VaccineUse vaccineuse)
+        public ActionResult Create([Bind(Include = "VaccineUseId,vaccineID,lotNumber,patientID,LinjectionSite,RinjectionSite,LIntradermal,RIntradermal,LIntramuscular,RIntramuscular,lsub,rsub,lnasal,rnasal,quantity,VaccineUseDate")] VaccineUse vaccineuse)
         {
 
             if (ModelState.IsValid)
@@ -119,7 +119,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin, Executive, ProgramStaff")]
-        public ActionResult Edit([Bind(Include = "VaccineUseId,vaccineID,lotNumber,patientID,LinjectionSite,RinjectionSite,quantity,VaccineUseDate")] VaccineUse vaccineuse)
+        public ActionResult Edit([Bind(Include = "VaccineUseId,vaccineID,lotNumber,patientID,LinjectionSite,RinjectionSite,LIntradermal,RIntradermal,LIntramuscular,RIntramuscular,lsub,rsub,lnasal,rnasal,quantity,VaccineUseDate")] VaccineUse vaccineuse)
         {
             if (ModelState.IsValid)
             {

@@ -79,7 +79,9 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
             {
                 db.Appointments.Add(appointment);
                 db.SaveChanges();
-                return RedirectToAction("PatientCreate");
+                //ViewBag.Message = "Appointment Scheduled";
+                //return View();
+                return RedirectToAction("Index", "Index");
             }
 
             return View(appointment);
