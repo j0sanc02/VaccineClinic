@@ -36,7 +36,7 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #2a95be;
+  color: #272727;
 }
 hr {
   border-top: 1px solid #e5e5e5;
@@ -580,8 +580,8 @@ ul.nostyle i {
 }
 #meet-team .team-member {
   padding: 13px;
-  background: #eeeeee;
-  border: 2px solid #eeeeee;
+  background: transparent;
+  border: 0px solid #eeeeee;
   transition: border-color 400ms;
   -webkit-transition: border-color 400ms;
 }
@@ -590,7 +590,7 @@ ul.nostyle i {
 }
 #meet-team .team-member .team-info {
   padding-bottom: 10px;
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 0px solid #dbdbdb;
   margin-bottom: 10px;
 }
 #meet-team .team-member:hover {
