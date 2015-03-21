@@ -24,10 +24,15 @@ namespace UniversityofLouisvilleVaccine.Models
         public string lotNumber { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Expiration")]
+        public DateTime expdate { get; set; }
+
+        [Required]
         [Display(Name = "Patient ID")]
         public string patientID { get; set; }
-
-
+        
         [Display(Name = "Left Arm")]
         public bool LinjectionSite { get; set; }
 

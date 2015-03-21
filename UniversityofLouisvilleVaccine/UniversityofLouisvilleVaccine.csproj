@@ -207,6 +207,10 @@
     <Compile Include="DataContexts\VaccineUseMigrations\201503030619227_Added injectionsites.Designer.cs">
       <DependentUpon>201503030619227_Added injectionsites.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataContexts\VaccineUseMigrations\201503200219394_Add exp date.cs" />
+    <Compile Include="DataContexts\VaccineUseMigrations\201503200219394_Add exp date.Designer.cs">
+      <DependentUpon>201503200219394_Add exp date.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataContexts\VaccineUseMigrations\Configuration.cs" />
     <Compile Include="DataContexts\Vendor.cs" />
     <Compile Include="DataContexts\VendorMigrations\201502230239179_Initial Create.cs" />
@@ -543,6 +547,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VaccineUseMigrations\201503030619227_Added injectionsites.resx">
       <DependentUpon>201503030619227_Added injectionsites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\VaccineUseMigrations\201503200219394_Add exp date.resx">
+      <DependentUpon>201503200219394_Add exp date.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VendorMigrations\201502230239179_Initial Create.resx">
       <DependentUpon>201502230239179_Initial Create.cs</DependentUpon>

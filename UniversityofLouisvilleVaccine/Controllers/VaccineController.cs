@@ -18,7 +18,7 @@ namespace UniversityofLouisvilleVaccine.Controllers
         private VaccineDBContext db = new VaccineDBContext();
 
         // GET: /Vaccine/
-        [Authorize(Roles = "Admin, Executive, ProgramStaff, Researcher")]
+        //[Authorize(Roles = "Admin, Executive, ProgramStaff, Researcher")]
         public ActionResult Index(string lotnumber, string searchString)
         {
             var lotlist = new List<string>();

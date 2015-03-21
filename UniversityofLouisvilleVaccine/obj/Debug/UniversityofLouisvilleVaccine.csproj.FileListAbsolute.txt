@@ -37,3 +37,4 @@ C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.csproj.GenerateResource.Cache
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.dll
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.pdb
+C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VaccineUseMigrations.Addexpdate.resources

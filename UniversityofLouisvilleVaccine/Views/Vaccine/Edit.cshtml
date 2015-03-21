@@ -27,6 +27,23 @@
                 @Html.ValidationMessageFor(model => model.vaccineID)
             </div>
         </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.lotNumber, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.lotNumber)
+                @Html.ValidationMessageFor(model => model.lotNumber)
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.expDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.expDate)
+                @Html.ValidationMessageFor(model => model.expDate)
+            </div>
+        </div>
+
         <div class="form-group">
             @Html.LabelFor(model => model.vaccineName, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -76,14 +93,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.lotNumber, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.lotNumber)
-                @Html.ValidationMessageFor(model => model.lotNumber)
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.numofDoses, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.numofDoses)
@@ -96,14 +105,6 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.salesPrice)
                 @Html.ValidationMessageFor(model => model.salesPrice)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.expDate, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.expDate)
-                @Html.ValidationMessageFor(model => model.expDate)
             </div>
         </div>
 
