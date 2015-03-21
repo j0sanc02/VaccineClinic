@@ -75,7 +75,7 @@ namespace UniversityofLouisvilleVaccine.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin, Executive, ProgramStaff, Researcher")]
-        public ActionResult Create([Bind(Include="ID,vaccineID,vaccineName,dateReceived,CPT,ICD9Code,NDC,leadTime,lotNumber,numofDoses,salesPrice,expDate")] Vaccine vaccine)
+        public ActionResult Create([Bind(Include = "ID,vaccineID,vaccineName,dateReceived,CPT,ICD9Code,NDC,leadTime,lotNumber,numofDoses,salesPrice,expDate,refugeePrice,clinicPrice,description,inventoryWarning")] Vaccine vaccine)
         {
             if (ModelState.IsValid)
             {
@@ -110,7 +110,7 @@ namespace UniversityofLouisvilleVaccine.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin, Executive, ProgramStaff")]
-        public ActionResult Edit([Bind(Include="ID,vaccineID,vaccineName,dateReceived,CPT,ICD9Code,NDC,leadTime,lotNumber,numofDoses,salesPrice,expDate")] Vaccine vaccine)
+        public ActionResult Edit([Bind(Include = "ID,vaccineID,vaccineName,dateReceived,CPT,ICD9Code,NDC,leadTime,lotNumber,numofDoses,salesPrice,expDate,refugeePrice,clinicPrice,description,inventoryWarning")] Vaccine vaccine)
         {
             if (ModelState.IsValid)
             {

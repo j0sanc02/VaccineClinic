@@ -191,6 +191,10 @@
     <Compile Include="DataContexts\VaccineMigrations\201502230312066_Initial Create.Designer.cs">
       <DependentUpon>201502230312066_Initial Create.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataContexts\VaccineMigrations\201503211230395_Added new fields.cs" />
+    <Compile Include="DataContexts\VaccineMigrations\201503211230395_Added new fields.Designer.cs">
+      <DependentUpon>201503211230395_Added new fields.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataContexts\VaccineMigrations\Configuration.cs" />
     <Compile Include="DataContexts\VaccineNotification.cs" />
     <Compile Include="DataContexts\VaccineNotificationMigrations\201502222217005_Initial Create.cs" />
@@ -538,6 +542,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VaccineMigrations\201502230312066_Initial Create.resx">
       <DependentUpon>201502230312066_Initial Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\VaccineMigrations\201503211230395_Added new fields.resx">
+      <DependentUpon>201503211230395_Added new fields.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VaccineNotificationMigrations\201502222217005_Initial Create.resx">
       <DependentUpon>201502222217005_Initial Create.cs</DependentUpon>
