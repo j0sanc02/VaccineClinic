@@ -19,7 +19,7 @@ namespace UniversityofLouisvilleVaccine.Controllers
 
         // GET: /Vaccine/
         //[Authorize(Roles = "Admin, Executive, ProgramStaff, Researcher")]
-        public ActionResult Index(string lotnumber, string searchString)
+        public ActionResult Index(string lotnumber, string searchString, string StringID)
         {
             var lotlist = new List<string>();
 
@@ -27,15 +27,25 @@ namespace UniversityofLouisvilleVaccine.Controllers
                          orderby d.lotNumber
                          select d.lotNumber;
 
+
             lotlist.AddRange(lotqry.Distinct());
             ViewBag.lotNumber = new SelectList(lotlist);
 
             var vaccines = from v in db.Vaccines select v;
+            
+            if (!String.IsNullOrEmpty(StringID))
+            {
+                vaccines = vaccines.Where(s => s.vaccineID.Equals(StringID));
 
+            }
+            
             if (!String.IsNullOrEmpty(searchString))
             {
                 vaccines = vaccines.Where(s => s.vaccineName.Contains(searchString));
+                //vaccines = vaccines.Where(s => s.lotNumber.Contains(searchString));
             }
+
+
 
             if(!String.IsNullOrEmpty(lotnumber))
             {

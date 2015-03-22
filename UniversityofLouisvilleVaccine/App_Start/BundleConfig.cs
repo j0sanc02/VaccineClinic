@@ -26,6 +26,10 @@ namespace UniversityofLouisvilleVaccine
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            
+            //Table Sorter
+            bundles.Add(new ScriptBundle("~/bundles/jquerytable").Include(
+                        "~/Scripts/jquery.tablesorter.js"));
 
             //Calendar css file
             bundles.Add(new StyleBundle("~/Content/fullcalendarcss").Include(

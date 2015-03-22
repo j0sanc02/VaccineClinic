@@ -66,5 +66,14 @@
     @Scripts.Render("~/bundles/fullcalendarjs")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(function () {
+
+                $('.table').tablesorter();
+            });
+        });
+    </script>
 </body>
 </html>
