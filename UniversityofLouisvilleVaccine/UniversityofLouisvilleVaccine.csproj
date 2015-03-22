@@ -166,16 +166,17 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\ApptController.cs" />
+    <Compile Include="Controllers\Grant2Controller.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\LandingController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\UploadFileController.cs" />
     <Compile Include="Controllers\VaccineUseController.cs" />
     <Compile Include="Controllers\VendorController.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\GrantsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -406,6 +407,8 @@
     <Content Include="Content\main.less" />
     <Content Include="App_Data\Vacmdf" />
     <Content Include="bin\UniversityofLouisvilleVaccine.dll.config" />
+    <Content Include="FileUploads\test.docx" />
+    <Content Include="FileUploads\test777.pdf" />
     <None Include="Properties\PublishProfiles\File Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\jasonsanchez819.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\jasonsanchez819.com - WebDeploy2.pubxml" />
@@ -493,7 +496,6 @@
     <Content Include="Views\Vaccine\Details.cshtml" />
     <Content Include="Views\Vaccine\Edit.cshtml" />
     <Content Include="Views\Schedule\Index.cshtml" />
-    <Content Include="Views\Grants\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Index\Index.cshtml" />
     <Content Include="Views\index.cshtml" />
@@ -527,6 +529,9 @@
     <Content Include="Views\Emails\Web.config" />
     <Content Include="Views\Emails\_ViewStart.cshtml" />
     <Content Include="Views\Emails\Warning.cshtml" />
+    <Content Include="Views\Grant2\Index.cshtml" />
+    <Content Include="Views\UploadFile\Index.cshtml" />
+    <Content Include="Views\UploadFile\Upload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\prettyPhoto\" />
