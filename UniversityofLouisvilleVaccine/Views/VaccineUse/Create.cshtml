@@ -7,7 +7,7 @@
 <br />
 <br />
 <br />
-<h2>Create</h2>
+<h2>Record a Vaccine Use</h2>
 
 
 @using (Html.BeginForm()) 
@@ -33,7 +33,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.vaccineID, new { @class = "control-label col-md-4" })
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.vaccineID)
+                    @Html.TextBoxFor(model => model.vaccineID, new { style = "width:175px", @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.vaccineID)
                 </div>
             </div>
@@ -41,7 +41,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.lotNumber, new { @class = "control-label col-md-4" })
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.lotNumber)
+                    @Html.TextBoxFor(model => model.lotNumber, new { style = "width:175px", @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.lotNumber)
                 </div>
             </div>
@@ -57,7 +57,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.patientID, new { @class = "control-label col-md-4" })
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.patientID)
+                    @Html.TextBoxFor(model => model.patientID, new { style = "width:175px", @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.patientID)
                 </div>
             </div>
@@ -73,7 +73,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.quantity, new { @class = "control-label col-md-4" })
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.quantity)
+                    @Html.TextBoxFor(model => model.quantity, new { @type = "number", style = "width:175px", @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.quantity)
                 </div>
             </div>
