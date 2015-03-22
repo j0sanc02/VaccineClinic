@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Postal;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -78,6 +79,14 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
                         int currentvaccinequantity = vdb.numofDoses;
                         int newvaccinetotal = currentvaccinequantity - decreaseby;                    
                         vdb.numofDoses = newvaccinetotal;
+
+                        if (newvaccinetotal <= vdb.inventoryWarning)
+                        {
+                            dynamic email = new Email("Warning");
+                            email.To = "j0sanc02@gmail.com";
+                            email.Send();
+
+                        }
                     }
 
                     try
