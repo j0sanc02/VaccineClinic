@@ -172,7 +172,6 @@
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\UploadFileController.cs" />
     <Compile Include="Controllers\VaccineUseController.cs" />
-    <Compile Include="Controllers\VendorController.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
@@ -181,6 +180,7 @@
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\VaccineController.cs" />
+    <Compile Include="Controllers\VendorController.cs" />
     <Compile Include="DataContexts\Identity.cs" />
     <Compile Include="DataContexts\IdentityMigrations\201502230351497_Initial Create.cs" />
     <Compile Include="DataContexts\IdentityMigrations\201502230351497_Initial Create.Designer.cs">
@@ -229,6 +229,14 @@
     <Compile Include="DataContexts\VendorMigrations\201502230239179_Initial Create.cs" />
     <Compile Include="DataContexts\VendorMigrations\201502230239179_Initial Create.Designer.cs">
       <DependentUpon>201502230239179_Initial Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\VendorMigrations\201503222033073_Add fields.cs" />
+    <Compile Include="DataContexts\VendorMigrations\201503222033073_Add fields.Designer.cs">
+      <DependentUpon>201503222033073_Add fields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\VendorMigrations\201503222036363_Removed duplicate id.cs" />
+    <Compile Include="DataContexts\VendorMigrations\201503222036363_Removed duplicate id.Designer.cs">
+      <DependentUpon>201503222036363_Removed duplicate id.cs</DependentUpon>
     </Compile>
     <Compile Include="DataContexts\VendorMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
@@ -505,11 +513,6 @@
     <Content Include="Views\VaccineUse\Details.cshtml" />
     <Content Include="Views\VaccineUse\Edit.cshtml" />
     <Content Include="Views\VaccineUse\Index.cshtml" />
-    <Content Include="Views\Vendor\Create.cshtml" />
-    <Content Include="Views\Vendor\Delete.cshtml" />
-    <Content Include="Views\Vendor\Details.cshtml" />
-    <Content Include="Views\Vendor\Edit.cshtml" />
-    <Content Include="Views\Vendor\Index.cshtml" />
     <Content Include="Views\Appt\Create.cshtml" />
     <Content Include="Views\Appt\Delete.cshtml" />
     <Content Include="Views\Appt\Details.cshtml" />
@@ -532,6 +535,11 @@
     <Content Include="Views\Grant2\Index.cshtml" />
     <Content Include="Views\UploadFile\Index.cshtml" />
     <Content Include="Views\UploadFile\Upload.cshtml" />
+    <Content Include="Views\Vendor\Create.cshtml" />
+    <Content Include="Views\Vendor\Delete.cshtml" />
+    <Content Include="Views\Vendor\Details.cshtml" />
+    <Content Include="Views\Vendor\Edit.cshtml" />
+    <Content Include="Views\Vendor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\prettyPhoto\" />
@@ -576,6 +584,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VendorMigrations\201502230239179_Initial Create.resx">
       <DependentUpon>201502230239179_Initial Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\VendorMigrations\201503222033073_Add fields.resx">
+      <DependentUpon>201503222033073_Add fields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\VendorMigrations\201503222036363_Removed duplicate id.resx">
+      <DependentUpon>201503222036363_Removed duplicate id.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503030053330_InitialCreate.resx">
       <DependentUpon>201503030053330_InitialCreate.cs</DependentUpon>
