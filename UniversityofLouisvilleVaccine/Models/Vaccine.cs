@@ -67,7 +67,7 @@ namespace UniversityofLouisvilleVaccine.Models
         public int leadTime { get; set; }
       
         [Required]
-        [Display(Name = "Number of Doses")]
+        [Display(Name = "Quantity")]
         public int numofDoses { get; set; }
 
         [Required]
