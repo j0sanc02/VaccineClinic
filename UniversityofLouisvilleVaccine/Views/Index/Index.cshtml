@@ -296,7 +296,7 @@
                             <h3>Julio Ramirez</h3>
                             <span>MD</span>
                         </div>
-                        <span>Medical Director</span>
+                        @*<span>Medical Director</span>*@
                     </div>
                 </div>
 
@@ -306,13 +306,13 @@
                             <img class="img-responsive" src="~/Content/images/team/carrico.jpg" alt="">
                         </div>
                         <div class="team-info">
-                            <h3>Ruth Carrico</h3>
+                            <h3>Ruth <br />Carrico</h3>
                             <span>PhD RN FSHEA CIC</span>
                         </div>
-                        <span>Clinic Director</span>
+                        @*<span>Clinic Director</span>*@
                     </div>
                 </div>
-                >
+                
                 <div class="col-sm-6 col-md-2">
                     <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
                         <div class="team-img">
@@ -456,9 +456,14 @@
                                 550 S. Jackson Street<br>
                                 Ambulatory Care Building, Floor 2 <br>
                                 Louisville, KY 40202<br>
-                                <abbr title="Phone">P:</abbr> (502) 562-2822
+                                <abbr >P:</abbr><a href="tel:502-562-2822"> (502)-562-2822</a>
+                                <div id="email-button" class="text-center">
+                                    <br />
+                                    <a href="mailto:blake12321@gmail.com"><button class="btn btn-primary">Send Email</button></a>
+                                </div>
                             </address>
-                            <form id="main-contact-form" name="contact-form" method="post" action="#">
+
+                            @*<form id="main-contact-form" name="contact-form" method="post" action="#">
                                 <div class="form-group">
                                     <input type="text" name="name" class="form-control" placeholder="Name" required>
                                 </div>
@@ -472,7 +477,7 @@
                                     <textarea name="message" class="form-control" rows="8" placeholder="Message" required></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary" href="mailto:blake12321@gmail.com">Send Message</button>
-                            </form>
+                            </form>*@
                         </div>
                     </div>
                 </div>
@@ -482,7 +487,7 @@
     <footer id="footer">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="text-center">
                     &copy; 2015 UofL Vaccine and International Travel Clinic <br />
                     Designed by Syntax Solutions
                 </div>
