@@ -171,6 +171,7 @@
     <Compile Include="Controllers\LandingController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\UploadFileController.cs" />
+    <Compile Include="Controllers\VaccineNotificationController.cs" />
     <Compile Include="Controllers\VaccineUseController.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -209,6 +210,14 @@
     <Compile Include="DataContexts\VaccineNotificationMigrations\201502222217005_Initial Create.cs" />
     <Compile Include="DataContexts\VaccineNotificationMigrations\201502222217005_Initial Create.Designer.cs">
       <DependentUpon>201502222217005_Initial Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\VaccineNotificationMigrations\201503222337552_Added Fields.cs" />
+    <Compile Include="DataContexts\VaccineNotificationMigrations\201503222337552_Added Fields.Designer.cs">
+      <DependentUpon>201503222337552_Added Fields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\VaccineNotificationMigrations\201503230021555_Added Name.cs" />
+    <Compile Include="DataContexts\VaccineNotificationMigrations\201503230021555_Added Name.Designer.cs">
+      <DependentUpon>201503230021555_Added Name.cs</DependentUpon>
     </Compile>
     <Compile Include="DataContexts\VaccineNotificationMigrations\Configuration.cs" />
     <Compile Include="DataContexts\VaccineUse.cs" />
@@ -540,6 +549,11 @@
     <Content Include="Views\Vendor\Details.cshtml" />
     <Content Include="Views\Vendor\Edit.cshtml" />
     <Content Include="Views\Vendor\Index.cshtml" />
+    <Content Include="Views\VaccineNotification\Create.cshtml" />
+    <Content Include="Views\VaccineNotification\Delete.cshtml" />
+    <Content Include="Views\VaccineNotification\Details.cshtml" />
+    <Content Include="Views\VaccineNotification\Edit.cshtml" />
+    <Content Include="Views\VaccineNotification\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\prettyPhoto\" />
@@ -572,6 +586,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VaccineNotificationMigrations\201502222217005_Initial Create.resx">
       <DependentUpon>201502222217005_Initial Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\VaccineNotificationMigrations\201503222337552_Added Fields.resx">
+      <DependentUpon>201503222337552_Added Fields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\VaccineNotificationMigrations\201503230021555_Added Name.resx">
+      <DependentUpon>201503230021555_Added Name.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VaccineUseMigrations\201502230248440_Initial Create.resx">
       <DependentUpon>201502230248440_Initial Create.cs</DependentUpon>

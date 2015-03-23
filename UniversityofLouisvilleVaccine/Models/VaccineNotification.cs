@@ -15,10 +15,14 @@ namespace UniversityofLouisvilleVaccine.Models
         public int NotificationID { get; set; }
         
         public string vaccineID { get; set; }
+
+        public string vaccineName { get; set; }
         
         public string lotNumber { get; set; }
         
-        public string numofDoses { get; set; }
+        public int numofDoses { get; set; }
+
+        public int warning { get; set; }
         
         public DateTime expDate { get; set; }
         

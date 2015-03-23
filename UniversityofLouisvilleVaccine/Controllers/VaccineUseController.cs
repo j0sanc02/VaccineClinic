@@ -86,6 +86,29 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
                             email.To = "j0sanc02@gmail.com";
                             email.Send();
 
+                            VaccineNotification vn = new VaccineNotification();
+                            VaccineNotificationDB vndb = new VaccineNotificationDB();
+
+                            vdb.vaccineID = vn.vaccineID;
+                            vdb.vaccineName = vn.vaccineName;
+                            vdb.lotNumber = vn.lotNumber;
+                            vdb.numofDoses = vn.numofDoses;
+                            vdb.inventoryWarning = vn.warning;
+                            vdb.expDate = vn.expDate;
+                            vn.notificationchecked = false;
+
+                            vndb.VaccineNotifications.Add(vn);
+                            vndb.SaveChanges();
+
+                            
+
+                            
+                            
+
+
+
+
+
                         }
                     }
 
