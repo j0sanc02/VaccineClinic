@@ -39,11 +39,11 @@ namespace UniversityofLouisvilleVaccine.Models
         public bool allDay { get; set; }
     }
 
-    public class ApptDBContext : DbContext
-    {
-        public DbSet<Appointment> Appointments { get; set; }
+    //public class ApptDBContext : DbContext
+    //{
+    //    public DbSet<Appointment> Appointments { get; set; }
 
        
-    }
+    //}
 
 }

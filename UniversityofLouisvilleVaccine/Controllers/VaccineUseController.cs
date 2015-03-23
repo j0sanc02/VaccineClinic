@@ -18,14 +18,14 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         private VaccineUseDBContext db = new VaccineUseDBContext();
 
         // GET: /VaccineUse/
-        [Authorize(Roles = "Admin, Executive, ProgramStaff, Researcher")]
+        //[Authorize(Roles = "Admin, Executive, ProgramStaff, Researcher")]
         public ActionResult Index()
         {
             return View(db.VaccineUses.ToList());
         }
 
         // GET: /VaccineUse/Details/5
-        [Authorize(Roles = "Admin, Executive, ProgramStaff, Researcher")]
+        //[Authorize(Roles = "Admin, Executive, ProgramStaff, Researcher")]
         public ActionResult Details(int id)
         {
             if (id == null)
@@ -41,7 +41,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         }
 
         // GET: /VaccineUse/Create
-        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
+        //[Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult Create()
         {
             return View();
@@ -52,7 +52,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
+        //[Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult Create([Bind(Include = "VaccineUseId,vaccineID,lotNumber,expdate,patientID,LinjectionSite,RinjectionSite,LIntradermal,RIntradermal,LIntramuscular,RIntramuscular,lsub,rsub,lnasal,rnasal,quantity,VaccineUseDate")] VaccineUse vaccineuse)
         {
 
@@ -126,7 +126,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         }
 
         // GET: /VaccineUse/Edit/5
-        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
+        //[Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult Edit(int id)
         {
             if (id == null)
@@ -146,7 +146,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
+        //[Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult Edit([Bind(Include = "VaccineUseId,vaccineID,lotNumber,expdate,patientID,LinjectionSite,RinjectionSite,LIntradermal,RIntradermal,LIntramuscular,RIntramuscular,lsub,rsub,lnasal,rnasal,quantity,VaccineUseDate")] VaccineUse vaccineuse)
         {
             if (ModelState.IsValid)
@@ -161,7 +161,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         
 
         // GET: /VaccineUse/Delete/5
-        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
+        //[Authorize(Roles = "Admin, Executive, ProgramStaff")]
         public ActionResult Delete(int id)
         {
             if (id == null)
@@ -177,7 +177,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         }
 
         // POST: /VaccineUse/Delete/5
-        [Authorize(Roles = "Admin, Executive, ProgramStaff")]
+        //[Authorize(Roles = "Admin, Executive, ProgramStaff")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
