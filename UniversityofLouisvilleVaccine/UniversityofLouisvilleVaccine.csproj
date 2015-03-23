@@ -182,6 +182,12 @@
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\VaccineController.cs" />
     <Compile Include="Controllers\VendorController.cs" />
+    <Compile Include="DataContexts\ApptDBContext.cs" />
+    <Compile Include="DataContexts\ApptMigrations\201503230506014_New.cs" />
+    <Compile Include="DataContexts\ApptMigrations\201503230506014_New.Designer.cs">
+      <DependentUpon>201503230506014_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\ApptMigrations\Configuration.cs" />
     <Compile Include="DataContexts\Identity.cs" />
     <Compile Include="DataContexts\IdentityMigrations\201502230351497_Initial Create.cs" />
     <Compile Include="DataContexts\IdentityMigrations\201502230351497_Initial Create.Designer.cs">
@@ -255,11 +261,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503030053330_InitialCreate.cs" />
-    <Compile Include="Migrations\201503030053330_InitialCreate.Designer.cs">
-      <DependentUpon>201503030053330_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationRole.cs" />
@@ -275,14 +276,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Appt.mdf" />
-    <Content Include="App_Data\Appt_log.ldf">
-      <DependentUpon>Appt.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\event.mdf" />
-    <Content Include="App_Data\event_log.ldf">
-      <DependentUpon>event.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Data\Vacmdf_log.ldf" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\Antlr3.Runtime.pdb" />
@@ -486,7 +479,9 @@
     <Content Include="Scripts\landing-respond.min.js" />
     <Content Include="Scripts\smoothscroll.js" />
     <Content Include="Scripts\wow.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -573,6 +568,9 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DataContexts\ApptMigrations\201503230506014_New.resx">
+      <DependentUpon>201503230506014_New.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\IdentityMigrations\201502230351497_Initial Create.resx">
       <DependentUpon>201502230351497_Initial Create.cs</DependentUpon>
     </EmbeddedResource>
@@ -617,9 +615,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VendorMigrations\201503222036363_Removed duplicate id.resx">
       <DependentUpon>201503222036363_Removed duplicate id.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503030053330_InitialCreate.resx">
-      <DependentUpon>201503030053330_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

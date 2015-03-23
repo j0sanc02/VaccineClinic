@@ -33,7 +33,6 @@ C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VaccineUseMigrations.InitialCreate.resources
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VaccineUseMigrations.Addedinjectionsites.resources
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VendorMigrations.InitialCreate.resources
-C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.Migrations.InitialCreate.resources
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.csproj.GenerateResource.Cache
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.dll
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.pdb
@@ -90,6 +89,7 @@ C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VaccineNotificationMigrations.AddedFields.resources
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VaccineNotificationMigrations.AddedName.resources
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VaccineNotificationMigrations.Removename.resources
+<<<<<<< HEAD
 C:\Users\Tyler\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\bin\Postal.dll
 C:\Users\Tyler\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\bin\RazorEngine.dll
 C:\Users\Tyler\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\bin\Postal.xml
@@ -100,3 +100,6 @@ C:\Users\Tyler\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\
 C:\Users\Tyler\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VaccineNotificationMigrations.Removename.resources
 C:\Users\Tyler\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VendorMigrations.Addfields.resources
 C:\Users\Tyler\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VendorMigrations.Removedduplicateid.resources
+=======
+C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.ApptMigrations.New.resources
+>>>>>>> 2c38f9b5755c3b7c562cc2f66dbb210426b350f8
