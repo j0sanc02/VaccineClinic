@@ -219,6 +219,10 @@
     <Compile Include="DataContexts\VaccineNotificationMigrations\201503230021555_Added Name.Designer.cs">
       <DependentUpon>201503230021555_Added Name.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataContexts\VaccineNotificationMigrations\201503230229275_Remove name.cs" />
+    <Compile Include="DataContexts\VaccineNotificationMigrations\201503230229275_Remove name.Designer.cs">
+      <DependentUpon>201503230229275_Remove name.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataContexts\VaccineNotificationMigrations\Configuration.cs" />
     <Compile Include="DataContexts\VaccineUse.cs" />
     <Compile Include="DataContexts\VaccineUseMigrations\201502230248440_Initial Create.cs" />
@@ -592,6 +596,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VaccineNotificationMigrations\201503230021555_Added Name.resx">
       <DependentUpon>201503230021555_Added Name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\VaccineNotificationMigrations\201503230229275_Remove name.resx">
+      <DependentUpon>201503230229275_Remove name.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VaccineUseMigrations\201502230248440_Initial Create.resx">
       <DependentUpon>201502230248440_Initial Create.cs</DependentUpon>

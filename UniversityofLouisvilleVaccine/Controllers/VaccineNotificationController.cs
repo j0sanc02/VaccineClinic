@@ -47,7 +47,7 @@ namespace UniversityofLouisvilleVaccine.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="NotificationID,vaccineID,vaccineName,lotNumber,numofDoses,warning,expDate,notificationchecked")] VaccineNotification vaccinenotification)
+        public ActionResult Create([Bind(Include="NotificationID,vaccineID,vaccineName,lotNumber,numofDoses,warning,notificationchecked")] VaccineNotification vaccinenotification)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace UniversityofLouisvilleVaccine.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="NotificationID,vaccineID,vaccineName,lotNumber,numofDoses,warning,expDate,notificationchecked")] VaccineNotification vaccinenotification)
+        public ActionResult Edit([Bind(Include="NotificationID,vaccineID,vaccineName,lotNumber,numofDoses,warning,notificationchecked")] VaccineNotification vaccinenotification)
         {
             if (ModelState.IsValid)
             {

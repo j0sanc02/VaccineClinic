@@ -23,9 +23,7 @@ namespace UniversityofLouisvilleVaccine.Models
         public int numofDoses { get; set; }
 
         public int warning { get; set; }
-        
-        public DateTime expDate { get; set; }
-        
+               
         public bool notificationchecked { get; set; }
 
     }

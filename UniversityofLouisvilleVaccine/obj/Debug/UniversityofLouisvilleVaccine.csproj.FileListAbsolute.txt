@@ -89,3 +89,4 @@ C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VendorMigrations.Removedduplicateid.resources
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VaccineNotificationMigrations.AddedFields.resources
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VaccineNotificationMigrations.AddedName.resources
+C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Debug\UniversityofLouisvilleVaccine.DataContexts.VaccineNotificationMigrations.Removename.resources
