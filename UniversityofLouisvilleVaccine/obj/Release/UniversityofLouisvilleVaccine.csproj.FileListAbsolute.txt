@@ -49,3 +49,6 @@ C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Release\UniversityofLouisvilleVaccine.dll
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Release\UniversityofLouisvilleVaccine.pdb
 C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Release\UniversityofLouisvilleVaccine.DataContexts.ApptMigrations.New.resources
+C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Release\UniversityofLouisvilleVaccine.DataContexts.ApptMigrations.BrandNew.resources
+C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Release\UniversityofLouisvilleVaccine.DataContexts.VaccineMigrations.New.resources
+C:\Users\jpapp_000\Documents\GitHub\VaccineClinic\UniversityofLouisvilleVaccine\obj\Release\UniversityofLouisvilleVaccine.DataContexts.VaccineMigrations.Required.resources

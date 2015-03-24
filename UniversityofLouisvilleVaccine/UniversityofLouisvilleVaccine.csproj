@@ -187,6 +187,10 @@
     <Compile Include="DataContexts\ApptMigrations\201503230506014_New.Designer.cs">
       <DependentUpon>201503230506014_New.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataContexts\ApptMigrations\201503240323318_Brand New.cs" />
+    <Compile Include="DataContexts\ApptMigrations\201503240323318_Brand New.Designer.cs">
+      <DependentUpon>201503240323318_Brand New.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataContexts\ApptMigrations\Configuration.cs" />
     <Compile Include="DataContexts\Identity.cs" />
     <Compile Include="DataContexts\IdentityMigrations\201502230351497_Initial Create.cs" />
@@ -210,6 +214,14 @@
     <Compile Include="DataContexts\VaccineMigrations\201503211230395_Added new fields.cs" />
     <Compile Include="DataContexts\VaccineMigrations\201503211230395_Added new fields.Designer.cs">
       <DependentUpon>201503211230395_Added new fields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\VaccineMigrations\201503240222579_New.cs" />
+    <Compile Include="DataContexts\VaccineMigrations\201503240222579_New.Designer.cs">
+      <DependentUpon>201503240222579_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\VaccineMigrations\201503240251154_Required.cs" />
+    <Compile Include="DataContexts\VaccineMigrations\201503240251154_Required.Designer.cs">
+      <DependentUpon>201503240251154_Required.cs</DependentUpon>
     </Compile>
     <Compile Include="DataContexts\VaccineMigrations\Configuration.cs" />
     <Compile Include="DataContexts\VaccineNotification.cs" />
@@ -276,7 +288,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Vacmdf_log.ldf" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\Antlr3.Runtime.pdb" />
     <Content Include="bin\EntityFramework.dll" />
@@ -419,10 +430,10 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\main - Copy.less" />
     <Content Include="Content\main.less" />
-    <Content Include="App_Data\Vacmdf" />
     <Content Include="bin\UniversityofLouisvilleVaccine.dll.config" />
     <Content Include="FileUploads\test.docx" />
     <Content Include="FileUploads\test777.pdf" />
+    <Content Include="Downloads\PatientHealthQuestionnaire.pdf" />
     <None Include="Properties\PublishProfiles\File Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\jasonsanchez819.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\jasonsanchez819.com - WebDeploy2.pubxml" />
@@ -555,6 +566,7 @@
     <Content Include="Views\VaccineNotification\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Content\Images\prettyPhoto\" />
     <Folder Include="Views\Index\css\" />
     <Folder Include="Views\Index\fonts\" />
@@ -571,6 +583,9 @@
     <EmbeddedResource Include="DataContexts\ApptMigrations\201503230506014_New.resx">
       <DependentUpon>201503230506014_New.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\ApptMigrations\201503240323318_Brand New.resx">
+      <DependentUpon>201503240323318_Brand New.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\IdentityMigrations\201502230351497_Initial Create.resx">
       <DependentUpon>201502230351497_Initial Create.cs</DependentUpon>
     </EmbeddedResource>
@@ -585,6 +600,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VaccineMigrations\201503211230395_Added new fields.resx">
       <DependentUpon>201503211230395_Added new fields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\VaccineMigrations\201503240222579_New.resx">
+      <DependentUpon>201503240222579_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\VaccineMigrations\201503240251154_Required.resx">
+      <DependentUpon>201503240251154_Required.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VaccineNotificationMigrations\201502222217005_Initial Create.resx">
       <DependentUpon>201502222217005_Initial Create.cs</DependentUpon>

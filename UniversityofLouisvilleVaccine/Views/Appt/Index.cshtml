@@ -8,65 +8,66 @@
     <br />
     <br />
     <br />
-    <h3>Index</h3>
+    <h2>List of Appointments</h2>
 
-    <p>
+    <div class="col-md-3 btn btn-default">
         @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.start)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.hour)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.min)
-            </th>
-            @*<th>
-                    @Html.DisplayNameFor(model => model.end)
+    </div>
+    <br />
+            <table class="table table-striped table-hover table-responsive">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.title)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.allDay)
-                </th>*@
-            <th></th>
-        </tr>
+                    @Html.DisplayNameFor(model => model.start)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.hour)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.min)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.end)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.allDay)
+                    </th>*@
+                <th></th>
+            </tr>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.start)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.hour)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.min)
-                </td>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.end)
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.title)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.allDay)
-                    </td>*@
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
-                </td>
-            </tr>
-        }
+                        @Html.DisplayFor(modelItem => item.start)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.hour)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.min)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.end)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.allDay)
+                        </td>*@
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                    </td>
+                </tr>
+            }
 
-    </table>
-</div>
+        </table>
+    </div>
 <div class="col-md-7">
     <br />
     <br />

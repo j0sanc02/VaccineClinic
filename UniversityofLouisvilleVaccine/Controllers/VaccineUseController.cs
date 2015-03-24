@@ -79,37 +79,50 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
                         int currentvaccinequantity = vdb.numofDoses;
                         int newvaccinetotal = currentvaccinequantity - decreaseby;                    
                         vdb.numofDoses = newvaccinetotal;
-
-                        if (newvaccinetotal <= vdb.inventoryWarning)
-                        {
-                            dynamic email = new Email("Warning");
-                            email.To = "j0sanc02@gmail.com";
-                            email.Send();
-
-                                
-                                //VaccineNotification vn = new VaccineNotification();
-                                //VaccineNotificationDB vndb = new VaccineNotificationDB();
-
-
-
-                                //vdb.vaccineID = vn.vaccineID;
-                                //vdb.vaccineName = vn.vaccineName;
-                                //vdb.lotNumber = vn.lotNumber;
-                                //vdb.numofDoses = vn.numofDoses;
-                                //vdb.inventoryWarning = vn.warning;
-                                
-                                ////vdb.expDate = vn.expDate;
-                                ////vn.notificationchecked = false;
-                                
-                                //vndb.VaccineNotifications.Add(vn);
-                                //vndb.SaveChanges();
-
-                        }
                     }
 
                     try
                     {
                         VaccineDB.SaveChanges();
+
+                        VaccineDBContext vb3 = new VaccineDBContext();
+
+                        var dosesum =
+                            (from vb in vb3.Vaccines
+                             where vb.vaccineID == vaccineID
+                             select vb.numofDoses).Sum();
+
+                        var avgwarning =
+                            (from VDB in vb3.Vaccines
+                             where VDB.vaccineID == vaccineID
+                             select VDB.inventoryWarning).Average();
+
+                        if (avgwarning >= dosesum)
+                        //if (newvaccinetotal <= vdb.inventoryWarning)
+                        {
+                            dynamic email = new Email("Warning");
+                            email.To = "j0sanc02@gmail.com";
+                            email.Send();
+
+
+                            //VaccineNotification vn = new VaccineNotification();
+                            //VaccineNotificationDB vndb = new VaccineNotificationDB();
+
+
+
+                            //vdb.vaccineID = vn.vaccineID;
+                            //vdb.vaccineName = vn.vaccineName;
+                            //vdb.lotNumber = vn.lotNumber;
+                            //vdb.numofDoses = vn.numofDoses;
+                            //vdb.inventoryWarning = vn.warning;
+
+                            ////vdb.expDate = vn.expDate;
+                            ////vn.notificationchecked = false;
+
+                            //vndb.VaccineNotifications.Add(vn);
+                            //vndb.SaveChanges();
+
+                        }
                                             
                         Console.WriteLine("Vaccine Amount Updated!");
                     }

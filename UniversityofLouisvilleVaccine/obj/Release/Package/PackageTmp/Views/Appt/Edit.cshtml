@@ -2,10 +2,16 @@
 
 @{
     ViewBag.Title = "Edit";
+    ViewBag.HoursList = new SelectList(new List<double>() { 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 });
+    ViewBag.MinsList = new SelectList(new List<double>() { 0, 15, 30, 45 });
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Edit</h2>
+<br />
+<br />
+<br />
+<h2>Edit an Appointment</h2>
+<hr />
 
 
 @using (Html.BeginForm())
@@ -13,15 +19,14 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Appointment</h4>
-        <hr />
+
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.id)
 
         <div class="form-group">
             @Html.LabelFor(model => model.title, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.title)
+                @Html.TextBoxFor(model => model.title, new { style = "width:175px", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.title)
             </div>
         </div>
@@ -37,7 +42,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.hour, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.hour)
+                @Html.DropDownListFor(model => model.hour, (SelectList)ViewBag.HoursList, new { style = "width:175px", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.hour)
             </div>
         </div>
@@ -45,7 +50,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.min, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.min)
+                @Html.DropDownListFor(model => model.min, (SelectList)ViewBag.MinsList, new { style = "width:175px", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.min)
             </div>
         </div>

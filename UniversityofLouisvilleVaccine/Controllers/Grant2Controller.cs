@@ -45,6 +45,8 @@ namespace UniversityofLouisvilleVaccine.Controllers
             string path = AppDomain.CurrentDomain.BaseDirectory + "FileUploads/";
             string fileName = fileNameWithExtention;
             return File(path + fileName, "text/plain", "test.txt");
+            
         }
+
 	}
 }

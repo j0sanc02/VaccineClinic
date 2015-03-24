@@ -177,7 +177,7 @@ namespace UniversityofLouisvilleVaccine.Controllers
         }
 
 
-        //[Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var Db = new UniversityofLouisvilleVaccine.DataContexts.ApplicationDbContext();

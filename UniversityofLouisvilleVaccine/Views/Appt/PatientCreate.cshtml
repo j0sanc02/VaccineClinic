@@ -2,6 +2,10 @@
 
 @{
     ViewBag.Title = "PatientCreate";
+
+    ViewBag.HoursList = new SelectList(new List<double>() { 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 });
+    ViewBag.MinsList = new SelectList(new List<double>() { 0, 15, 30, 45 });
+    
     Layout = "~/Views/Shared/PatientLayout.cshtml";
 }
 
@@ -20,39 +24,39 @@
             @Html.ValidationSummary(true)
 
             <div class="form-group">
-                @Html.LabelFor(model => model.title, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.title)
+                @Html.LabelFor(model => model.title, new { @class = "control-label col-md-3" })
+                <div class="col-md-6">
+                    @Html.TextBoxFor(model => model.title, new { style = "width:175px", @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.title)
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.start, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.start)
+                @Html.LabelFor(model => model.start, new { @class = "control-label col-md-3" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.start, new { style = "width:175px", @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.start)
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.hour, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.hour)
+                @Html.LabelFor(model => model.hour, new { @class = "control-label col-md-3" })
+                <div class="col-md-6">
+                    @Html.DropDownListFor(model => model.hour, (SelectList)ViewBag.HoursList, new { style = "width:175px", @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.hour)
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.min, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.min)
+                @Html.LabelFor(model => model.min, new { @class = "control-label col-md-3" })
+                <div class="col-md-6">
+                    @Html.DropDownListFor(model => model.min, (SelectList)ViewBag.MinsList, new { style = "width:175px", @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.min)
                 </div>
             </div>
 
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
+                <div class="col-md-offset-5 col-md-10">
                     <input type="submit" value="Create" class="btn btn-default" />
                 </div>
             </div>

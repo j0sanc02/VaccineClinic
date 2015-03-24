@@ -13,7 +13,6 @@ namespace UniversityofLouisvilleVaccine.Models
         public int ID { get; set; }
         
         [Required]
-        [RegularExpression(@"^\d+$", ErrorMessage = "Please enter proper contact details.")]
         [Display(Name = "Vaccine ID")]
         public string vaccineID { get; set; }
 
