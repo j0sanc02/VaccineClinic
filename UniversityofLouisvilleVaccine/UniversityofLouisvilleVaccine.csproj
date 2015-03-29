@@ -167,6 +167,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\ApptController.cs" />
     <Compile Include="Controllers\Grant2Controller.cs" />
+    <Compile Include="Controllers\GrantsController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\LandingController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
@@ -182,6 +183,7 @@
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\VaccineController.cs" />
     <Compile Include="Controllers\VendorController.cs" />
+    <Compile Include="DataContexts\AppointmentLookup.cs" />
     <Compile Include="DataContexts\ApptDBContext.cs" />
     <Compile Include="DataContexts\ApptMigrations\201503230506014_New.cs" />
     <Compile Include="DataContexts\ApptMigrations\201503230506014_New.Designer.cs">
@@ -192,6 +194,38 @@
       <DependentUpon>201503240323318_Brand New.cs</DependentUpon>
     </Compile>
     <Compile Include="DataContexts\ApptMigrations\Configuration.cs" />
+    <Compile Include="DataContexts\GrantInfo.cs" />
+    <Compile Include="DataContexts\GrantInfoMigrations\201503290719500_Initial Create.cs" />
+    <Compile Include="DataContexts\GrantInfoMigrations\201503290719500_Initial Create.Designer.cs">
+      <DependentUpon>201503290719500_Initial Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\GrantInfoMigrations\Configuration.cs" />
+    <Compile Include="DataContexts\Grants.cs" />
+    <Compile Include="DataContexts\GrantsMigrations\201503290421367_Initial Create.cs" />
+    <Compile Include="DataContexts\GrantsMigrations\201503290421367_Initial Create.Designer.cs">
+      <DependentUpon>201503290421367_Initial Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\GrantsMigrations\201503290540292_add file type.cs" />
+    <Compile Include="DataContexts\GrantsMigrations\201503290540292_add file type.Designer.cs">
+      <DependentUpon>201503290540292_add file type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\GrantsMigrations\201503290604284_Add Filepath.cs" />
+    <Compile Include="DataContexts\GrantsMigrations\201503290604284_Add Filepath.Designer.cs">
+      <DependentUpon>201503290604284_Add Filepath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\GrantsMigrations\201503290655017_Moved model props.cs" />
+    <Compile Include="DataContexts\GrantsMigrations\201503290655017_Moved model props.Designer.cs">
+      <DependentUpon>201503290655017_Moved model props.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\GrantsMigrations\201503290702356_Add upload date.cs" />
+    <Compile Include="DataContexts\GrantsMigrations\201503290702356_Add upload date.Designer.cs">
+      <DependentUpon>201503290702356_Add upload date.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\GrantsMigrations\201503290706342_Formats.cs" />
+    <Compile Include="DataContexts\GrantsMigrations\201503290706342_Formats.Designer.cs">
+      <DependentUpon>201503290706342_Formats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\GrantsMigrations\Configuration.cs" />
     <Compile Include="DataContexts\Identity.cs" />
     <Compile Include="DataContexts\IdentityMigrations\201502230351497_Initial Create.cs" />
     <Compile Include="DataContexts\IdentityMigrations\201502230351497_Initial Create.Designer.cs">
@@ -279,6 +313,11 @@
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ApplicationUserRole.cs" />
     <Compile Include="Models\Appointment.cs" />
+    <Compile Include="Models\File.cs" />
+    <Compile Include="Models\FilePath.cs" />
+    <Compile Include="Models\FileType.cs" />
+    <Compile Include="Models\GrantInfo.cs" />
+    <Compile Include="Models\Grants.cs" />
     <Compile Include="Models\IdentityManager.cs" />
     <Compile Include="Models\Vaccine.cs" />
     <Compile Include="Models\VaccineNotification.cs" />
@@ -343,6 +382,8 @@
     <Content Include="Content\animate.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\datepicker.css" />
+    <Content Include="Content\datepicker3.css" />
     <Content Include="Content\font-awesome - Copy.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min - Copy.css" />
@@ -426,6 +467,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\main - Copy.less" />
@@ -434,6 +476,7 @@
     <Content Include="FileUploads\test.docx" />
     <Content Include="FileUploads\test777.pdf" />
     <Content Include="Downloads\PatientHealthQuestionnaire.pdf" />
+    <Content Include="App_Data\Vacmdf" />
     <None Include="Properties\PublishProfiles\File Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\jasonsanchez819.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\jasonsanchez819.com - WebDeploy2.pubxml" />
@@ -450,6 +493,67 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bs.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.en-GB.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.eu.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fo.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr-CH.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hy.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it-CH.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kh.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sr-latin.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.uk.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -478,7 +582,7 @@
     <Content Include="Content\Images\testimonial\01.jpg" />
     <Content Include="Content\Images\testimonial\bg.jpg" />
     <Content Include="Content\Images\work-process\bg.jpg" />
-    <Content Include="Views\Index\js\bootstrap.min.js" />
+    <Content Include="Views\Documents\js\bootstrap.min.js" />
     <Content Include="Scripts\html5shiv.js" />
     <Content Include="Scripts\jquery.inview.min.js" />
     <Content Include="Scripts\jquery.isotope.min.js" />
@@ -524,7 +628,7 @@
     <Content Include="Views\Vaccine\Edit.cshtml" />
     <Content Include="Views\Schedule\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\Documents\Index.cshtml" />
     <Content Include="Views\index.cshtml" />
     <Content Include="Views\Landing\Landing.cshtml" />
     <Content Include="Views\VaccineUse\Create.cshtml" />
@@ -564,13 +668,19 @@
     <Content Include="Views\VaccineNotification\Details.cshtml" />
     <Content Include="Views\VaccineNotification\Edit.cshtml" />
     <Content Include="Views\VaccineNotification\Index.cshtml" />
+    <Content Include="Views\Appt\ReverseCalendar.cshtml" />
+    <Content Include="Views\Grants\Create.cshtml" />
+    <Content Include="Views\Grants\Delete.cshtml" />
+    <Content Include="Views\Grants\Details.cshtml" />
+    <Content Include="Views\Grants\Edit.cshtml" />
+    <Content Include="Views\Grants\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Content\Images\prettyPhoto\" />
-    <Folder Include="Views\Index\css\" />
-    <Folder Include="Views\Index\fonts\" />
-    <Folder Include="Views\Index\images\" />
+    <Folder Include="Documents\" />
+    <Folder Include="Views\Documents\css\" />
+    <Folder Include="Views\Documents\fonts\" />
+    <Folder Include="Views\Documents\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -585,6 +695,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\ApptMigrations\201503240323318_Brand New.resx">
       <DependentUpon>201503240323318_Brand New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\GrantInfoMigrations\201503290719500_Initial Create.resx">
+      <DependentUpon>201503290719500_Initial Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\GrantsMigrations\201503290421367_Initial Create.resx">
+      <DependentUpon>201503290421367_Initial Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\GrantsMigrations\201503290540292_add file type.resx">
+      <DependentUpon>201503290540292_add file type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\GrantsMigrations\201503290604284_Add Filepath.resx">
+      <DependentUpon>201503290604284_Add Filepath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\GrantsMigrations\201503290655017_Moved model props.resx">
+      <DependentUpon>201503290655017_Moved model props.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\GrantsMigrations\201503290702356_Add upload date.resx">
+      <DependentUpon>201503290702356_Add upload date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\GrantsMigrations\201503290706342_Formats.resx">
+      <DependentUpon>201503290706342_Formats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\IdentityMigrations\201502230351497_Initial Create.resx">
       <DependentUpon>201502230351497_Initial Create.cs</DependentUpon>

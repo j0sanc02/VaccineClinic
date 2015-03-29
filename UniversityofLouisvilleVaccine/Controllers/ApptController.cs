@@ -157,5 +157,63 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
             }
             base.Dispose(disposing);
         }
+
+        //get list of Appointments today on page load
+        //public ActionResult ReverseCalendar()
+        //{
+        //    ApptDBContext db = new ApptDBContext();
+        //    Appointment ap = new Appointment();
+
+        //    string datestart = DateTime.Today.ToString();
+
+        //    var query =
+        //        from APT in db.Appointments
+        //        where APT.start == datestart
+        //        select APT;
+
+        //    List<Appointment> listofappt = new List<Appointment>();
+
+        //    foreach (Appointment cp in query)
+        //    {
+        //        listofappt.Add(cp);
+        //    }
+
+        //    return View(listofappt);
+        //}
+
+        //get list of Appointments today after button click
+        public string ReverseCalendar(string start)
+        {
+            
+            //Appointment appointment = db.Appointments.Find(start);
+
+            return start;
+
+           // return start;
+           // ApptDBContext db = new ApptDBContext();
+           // Appointment ap = new Appointment();
+
+           // string datestart = start;
+
+           // var query = 
+           //     from APT in db.Appointments 
+           //     where APT.start == datestart
+           //     select APT;
+
+           // AppointmentLookupDBContext adc = new AppointmentLookupDBContext();
+
+           //// adc.
+
+           // List<Appointment> listofappt = new List<Appointment>();
+
+           // foreach (Appointment cp in query)
+           // {
+           //     listofappt.Add(cp);
+           // }
+
+           // return View(listofappt.ToList());
+        }
+
+
     }
 }

@@ -66,8 +66,9 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/fullcalendarjs")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bootstrap-datepicker")
     @RenderSection("scripts", required: false)
-
+    @section Scripts{
     <script type="text/javascript">
         $(document).ready(function () {
             $(function () {
@@ -76,5 +77,20 @@
             });
         });
     </script>
+
+
+    @*<script type="text/javascript">
+        $('#datepicker').datepicker("setDate", today);
+        function today() {
+            var d = new Date();
+            var curr_date = d.getDate();
+            var curr_month = d.getMonth() + 1;
+            var curr_year = d.getFullYear();
+            document.write(curr_date + "-" + curr_month + "-" + curr_year
+                )
+        };
+    </script>*@
+    }
+
 </body>
 </html>
