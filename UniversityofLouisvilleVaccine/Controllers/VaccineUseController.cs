@@ -53,7 +53,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //[Authorize(Roles = "Admin, Executive, ProgramStaff")]
-        public ActionResult Create([Bind(Include = "VaccineUseId,vaccineID,lotNumber,expdate,patientID,LinjectionSite,RinjectionSite,LIntradermal,RIntradermal,LIntramuscular,RIntramuscular,lsub,rsub,lnasal,rnasal,quantity,VaccineUseDate")] VaccineUse vaccineuse)
+        public ActionResult Create([Bind(Include = "VaccineUseId,vaccineID,lotNumber,expdate,patientID,LinjectionSite,RinjectionSite,LIntradermal,RIntradermal,LIntramuscular,RIntramuscular,lsub,rsub,lnasal,rnasal,quantity,VaccineUseDate,emaildate")] VaccineUse vaccineuse)
         {
 
             if (ModelState.IsValid)
@@ -84,7 +84,6 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
                     try
                     {
                         VaccineDB.SaveChanges();
-
                         VaccineDBContext vb3 = new VaccineDBContext();
 
                         var dosesum =
@@ -97,31 +96,101 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
                              where VDB.vaccineID == vaccineID
                              select VDB.inventoryWarning).Average();
 
+                        //var date =
+                        //    from vdb in db.VaccineUses
+                        //    where vdb.vaccineID == vaccineID
+                        //    select vdb.emaildate;
+
                         if (avgwarning >= dosesum)
+                        //Convert.ToInt32(date) >= Convert.ToInt32(DateTime.Today) + 7
                         //if (newvaccinetotal <= vdb.inventoryWarning)
                         {
                             dynamic email = new Email("Warning");
                             email.To = "j0sanc02@gmail.com";
                             email.Send();
 
+                            //var q2 =
+                            //    from vd2 in vb3.Vaccines
+                            //    where vd2.vaccineID == vaccineID & vd2.lotNumber == lot
+                            //    select vd2.vaccineName;
 
-                            //VaccineNotification vn = new VaccineNotification();
-                            //VaccineNotificationDB vndb = new VaccineNotificationDB();
+                            
+                            //string vid = vaccineID;
+                            //string name = q2.ToString();
+                            //string lot2 = lot;
+                            //DateTime sent = DateTime.Today;
 
+                            //EmailLookupDBContext eldb = new EmailLookupDBContext();
 
+                            //eldb.emaillookups.Create(vid, name, lot, sent );
 
-                            //vdb.vaccineID = vn.vaccineID;
-                            //vdb.vaccineName = vn.vaccineName;
-                            //vdb.lotNumber = vn.lotNumber;
-                            //vdb.numofDoses = vn.numofDoses;
-                            //vdb.inventoryWarning = vn.warning;
+                            //eldb.emaillookups.Add(vid, name, lot, sent);
 
-                            ////vdb.expDate = vn.expDate;
-                            ////vn.notificationchecked = false;
+                           
+                            //foreach (Vaccine vdb in query2)
+                            //{       
+                            //int currentvaccinequantity = vdb.numofDoses;
+                            //int newvaccinetotal = currentvaccinequantity - decreaseby;                    
+                            //vdb.numofDoses = newvaccinetotal;
+                            //}
+                            
+                            //ElookupDBContext edb = new ElookupDBContext();
+                            //VaccineUse vu = new VaccineUse();
+                            
 
-                            //vndb.VaccineNotifications.Add(vn);
-                            //vndb.SaveChanges();
+                            
+                            //string vid = v
+                            //string lnum = Vac.lotNumber;
+                            //DateTime exp = Vac.expDate;
+                            //string patid = 
+                            
+                            
+                            //edb.Elookups.Add(vid,lnum,exp);
 
+                            //    try
+                            //    {
+                            //        var q2 =
+                            //            from x in db.VaccineUses
+                            //            where x.Equals(vaccineID)
+                            //            select x;
+
+                            //        foreach (VaccineUse c in q2)
+                            //        {
+                            //            c.emaildate = DateTime.Today;
+                            //        }
+
+                            //    }
+                            //    catch (Exception e)
+                            //    {
+                            //        Console.WriteLine(e);
+                            //    }
+
+                            //}
+
+                            //else if (avgwarning >= dosesum && Convert.ToInt32(date)>=Convert.ToInt32(DateTime.Today)+ Convert.ToInt32(DateTime.Now.AddDays(7)))
+                            //{
+                            //    dynamic email = new Email("Warning");
+                            //    email.To = "j0sanc02@gmail.com";
+                            //    email.Send();
+
+                            //    try
+                            //    {
+                            //        var q2 =
+                            //            from x in db.VaccineUses
+                            //            where x.Equals(vaccineID)
+                            //            select x;
+
+                            //        foreach (VaccineUse c in q2)
+                            //        {
+                            //            c.emaildate = DateTime.Today;
+                            //        }
+
+                            //    }
+                            //    catch (Exception e)
+                            //    {
+                            //        Console.WriteLine(e);
+                            //    }
+                            //}
                         }
                                             
                         Console.WriteLine("Vaccine Amount Updated!");
@@ -160,7 +229,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //[Authorize(Roles = "Admin, Executive, ProgramStaff")]
-        public ActionResult Edit([Bind(Include = "VaccineUseId,vaccineID,lotNumber,expdate,patientID,LinjectionSite,RinjectionSite,LIntradermal,RIntradermal,LIntramuscular,RIntramuscular,lsub,rsub,lnasal,rnasal,quantity,VaccineUseDate")] VaccineUse vaccineuse)
+        public ActionResult Edit([Bind(Include = "VaccineUseId,vaccineID,lotNumber,expdate,patientID,LinjectionSite,RinjectionSite,LIntradermal,RIntradermal,LIntramuscular,RIntramuscular,lsub,rsub,lnasal,rnasal,quantity,VaccineUseDate,emaildate")] VaccineUse vaccineuse)
         {
             if (ModelState.IsValid)
             {

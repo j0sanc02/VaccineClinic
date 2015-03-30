@@ -2,6 +2,9 @@
 
 @{
     ViewBag.Title = "Create";
+
+    ViewBag.document = new SelectList(new List<string>() { "Budget Narrative", "Letter of Intent", "Resources", "Templates" });
+        
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -19,7 +22,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.docType, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.docType)
+                @Html.DropDownListFor(model => model.docType, (SelectList)ViewBag.document, new { style = "width:175px", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.docType)
             </div>
         </div>
@@ -27,8 +30,16 @@
         <div class="form-group">
             @Html.LabelFor(model => model.fileName, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.fileName)
+                @Html.TextBoxFor(model => model.fileName, new { style = "width:175px", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.fileName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.uploadDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.uploadDate)
+                @Html.ValidationMessageFor(model => model.uploadDate)
             </div>
         </div>
         

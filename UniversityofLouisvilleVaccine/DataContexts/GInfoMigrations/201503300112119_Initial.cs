@@ -1,14 +1,14 @@
-namespace UniversityofLouisvilleVaccine.DataContexts.GrantInfoMigrations
+namespace UniversityofLouisvilleVaccine.DataContexts.GInfoMigrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.GrantInfoes",
+                "dbo.GInfoes",
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
@@ -28,7 +28,7 @@ namespace UniversityofLouisvilleVaccine.DataContexts.GrantInfoMigrations
         
         public override void Down()
         {
-            DropTable("dbo.GrantInfoes");
+            DropTable("dbo.GInfoes");
         }
     }
 }

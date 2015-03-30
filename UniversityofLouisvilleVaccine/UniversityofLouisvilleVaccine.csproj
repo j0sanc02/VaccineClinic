@@ -39,6 +39,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\packages\Common.Logging.3.0.0\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>..\packages\Common.Logging.Core.3.0.0\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
@@ -51,6 +57,9 @@
     <Reference Include="Postal, Version=0.9.0.0, Culture=neutral, PublicKeyToken=45719375b8b4d528, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\postal.0.9.0\lib\net40\Postal.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\packages\Quartz.2.3.1\lib\net40\Quartz.dll</HintPath>
     </Reference>
     <Reference Include="RazorEngine">
       <HintPath>..\packages\RazorEngine.3.4.1\lib\net45\RazorEngine.dll</HintPath>
@@ -166,6 +175,8 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\ApptController.cs" />
+    <Compile Include="Controllers\EmailLookupController.cs" />
+    <Compile Include="Controllers\GInfoController.cs" />
     <Compile Include="Controllers\Grant2Controller.cs" />
     <Compile Include="Controllers\GrantsController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
@@ -194,12 +205,28 @@
       <DependentUpon>201503240323318_Brand New.cs</DependentUpon>
     </Compile>
     <Compile Include="DataContexts\ApptMigrations\Configuration.cs" />
-    <Compile Include="DataContexts\GrantInfo.cs" />
-    <Compile Include="DataContexts\GrantInfoMigrations\201503290719500_Initial Create.cs" />
-    <Compile Include="DataContexts\GrantInfoMigrations\201503290719500_Initial Create.Designer.cs">
-      <DependentUpon>201503290719500_Initial Create.cs</DependentUpon>
+    <Compile Include="DataContexts\Elookup.cs" />
+    <Compile Include="DataContexts\ElookupMigrations\201503291456055_Initial Create.cs" />
+    <Compile Include="DataContexts\ElookupMigrations\201503291456055_Initial Create.Designer.cs">
+      <DependentUpon>201503291456055_Initial Create.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataContexts\GrantInfoMigrations\Configuration.cs" />
+    <Compile Include="DataContexts\ElookupMigrations\Configuration.cs" />
+    <Compile Include="DataContexts\EmailLookup.cs" />
+    <Compile Include="DataContexts\EmaillookupMigrations\201503292225117_Initial.cs" />
+    <Compile Include="DataContexts\EmaillookupMigrations\201503292225117_Initial.Designer.cs">
+      <DependentUpon>201503292225117_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\EmaillookupMigrations\201503292246147_changed int to string.cs" />
+    <Compile Include="DataContexts\EmaillookupMigrations\201503292246147_changed int to string.Designer.cs">
+      <DependentUpon>201503292246147_changed int to string.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\EmaillookupMigrations\Configuration.cs" />
+    <Compile Include="DataContexts\GInfo.cs" />
+    <Compile Include="DataContexts\GInfoMigrations\201503300112119_Initial.cs" />
+    <Compile Include="DataContexts\GInfoMigrations\201503300112119_Initial.Designer.cs">
+      <DependentUpon>201503300112119_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\GInfoMigrations\Configuration.cs" />
     <Compile Include="DataContexts\Grants.cs" />
     <Compile Include="DataContexts\GrantsMigrations\201503290421367_Initial Create.cs" />
     <Compile Include="DataContexts\GrantsMigrations\201503290421367_Initial Create.Designer.cs">
@@ -289,6 +316,14 @@
     <Compile Include="DataContexts\VaccineUseMigrations\201503200219394_Add exp date.Designer.cs">
       <DependentUpon>201503200219394_Add exp date.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataContexts\VaccineUseMigrations\201503291513257_Added email date.cs" />
+    <Compile Include="DataContexts\VaccineUseMigrations\201503291513257_Added email date.Designer.cs">
+      <DependentUpon>201503291513257_Added email date.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\VaccineUseMigrations\201503291614236_removed email date.cs" />
+    <Compile Include="DataContexts\VaccineUseMigrations\201503291614236_removed email date.Designer.cs">
+      <DependentUpon>201503291614236_removed email date.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataContexts\VaccineUseMigrations\Configuration.cs" />
     <Compile Include="DataContexts\Vendor.cs" />
     <Compile Include="DataContexts\VendorMigrations\201502230239179_Initial Create.cs" />
@@ -313,10 +348,12 @@
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ApplicationUserRole.cs" />
     <Compile Include="Models\Appointment.cs" />
+    <Compile Include="Models\Elookup.cs" />
+    <Compile Include="Models\EmailLookup.cs" />
     <Compile Include="Models\File.cs" />
     <Compile Include="Models\FilePath.cs" />
     <Compile Include="Models\FileType.cs" />
-    <Compile Include="Models\GrantInfo.cs" />
+    <Compile Include="Models\GInfo.cs" />
     <Compile Include="Models\Grants.cs" />
     <Compile Include="Models\IdentityManager.cs" />
     <Compile Include="Models\Vaccine.cs" />
@@ -324,6 +361,8 @@
     <Compile Include="Models\VaccineUse.cs" />
     <Compile Include="Models\Vendor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScheduledTasks\EmailJob.cs" />
+    <Compile Include="ScheduledTasks\JobScheduler.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -477,6 +516,9 @@
     <Content Include="FileUploads\test777.pdf" />
     <Content Include="Downloads\PatientHealthQuestionnaire.pdf" />
     <Content Include="App_Data\Vacmdf" />
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\PublishProfiles\File Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\jasonsanchez819.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\jasonsanchez819.com - WebDeploy2.pubxml" />
@@ -674,6 +716,16 @@
     <Content Include="Views\Grants\Details.cshtml" />
     <Content Include="Views\Grants\Edit.cshtml" />
     <Content Include="Views\Grants\Index.cshtml" />
+    <Content Include="Views\EmailLookup\Create.cshtml" />
+    <Content Include="Views\EmailLookup\Delete.cshtml" />
+    <Content Include="Views\EmailLookup\Details.cshtml" />
+    <Content Include="Views\EmailLookup\Edit.cshtml" />
+    <Content Include="Views\EmailLookup\Index.cshtml" />
+    <Content Include="Views\GInfo\Create.cshtml" />
+    <Content Include="Views\GInfo\Delete.cshtml" />
+    <Content Include="Views\GInfo\Details.cshtml" />
+    <Content Include="Views\GInfo\Edit.cshtml" />
+    <Content Include="Views\GInfo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\prettyPhoto\" />
@@ -696,8 +748,17 @@
     <EmbeddedResource Include="DataContexts\ApptMigrations\201503240323318_Brand New.resx">
       <DependentUpon>201503240323318_Brand New.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataContexts\GrantInfoMigrations\201503290719500_Initial Create.resx">
-      <DependentUpon>201503290719500_Initial Create.cs</DependentUpon>
+    <EmbeddedResource Include="DataContexts\ElookupMigrations\201503291456055_Initial Create.resx">
+      <DependentUpon>201503291456055_Initial Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\EmaillookupMigrations\201503292225117_Initial.resx">
+      <DependentUpon>201503292225117_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\EmaillookupMigrations\201503292246147_changed int to string.resx">
+      <DependentUpon>201503292246147_changed int to string.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\GInfoMigrations\201503300112119_Initial.resx">
+      <DependentUpon>201503300112119_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\GrantsMigrations\201503290421367_Initial Create.resx">
       <DependentUpon>201503290421367_Initial Create.cs</DependentUpon>
@@ -758,6 +819,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VaccineUseMigrations\201503200219394_Add exp date.resx">
       <DependentUpon>201503200219394_Add exp date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\VaccineUseMigrations\201503291513257_Added email date.resx">
+      <DependentUpon>201503291513257_Added email date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\VaccineUseMigrations\201503291614236_removed email date.resx">
+      <DependentUpon>201503291614236_removed email date.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\VendorMigrations\201502230239179_Initial Create.resx">
       <DependentUpon>201502230239179_Initial Create.cs</DependentUpon>

@@ -7,7 +7,7 @@ using System.Web;
 
 namespace UniversityofLouisvilleVaccine.Models
 {
-    public class GrantInfo
+    public class GInfo
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -28,7 +28,7 @@ namespace UniversityofLouisvilleVaccine.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime grantEnd { get; set; }
-        
+
         [Required]
         [Display(Name = "Amount")]
         public int grantAmount { get; set; }
@@ -38,7 +38,8 @@ namespace UniversityofLouisvilleVaccine.Models
         public string grantFunder { get; set; }
 
         [Required]
-        [Display(Name = "Collaborator")]
+        [Display(Name = "Collaborator(s)")]
+        [DataType(DataType.MultilineText)]
         public string collaborator { get; set; }
 
         [Required]
@@ -54,5 +55,6 @@ namespace UniversityofLouisvilleVaccine.Models
         [Required]
         [Display(Name = "Max Pages")]
         public int maxPages { get; set; }
+
     }
 }

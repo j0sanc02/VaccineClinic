@@ -1,19 +1,19 @@
-namespace UniversityofLouisvilleVaccine.DataContexts.GrantInfoMigrations
+namespace UniversityofLouisvilleVaccine.DataContexts.EmaillookupMigrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<UniversityofLouisvilleVaccine.DataContexts.GrantInfoDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<UniversityofLouisvilleVaccine.DataContexts.EmailLookupDBContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            MigrationsDirectory = @"DataContexts\GrantInfoMigrations";
+            MigrationsDirectory = @"DataContexts\EmaillookupMigrations";
         }
 
-        protected override void Seed(UniversityofLouisvilleVaccine.DataContexts.GrantInfoDBContext context)
+        protected override void Seed(UniversityofLouisvilleVaccine.DataContexts.EmailLookupDBContext context)
         {
             //  This method will be called after migrating to the latest version.
 

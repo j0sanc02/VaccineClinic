@@ -7,15 +7,14 @@ using UniversityofLouisvilleVaccine.Models;
 
 namespace UniversityofLouisvilleVaccine.DataContexts
 {
-    public class GrantInfoDBContext:DbContext
+    public class ElookupDBContext : DbContext
     {
-        public GrantInfoDBContext()
-            :base("Default Connection")
+        public ElookupDBContext()
+            :base("DefaultConnection")
         {
 
         }
+        public DbSet<Elookup> Elookups { get; set; }
 
-        DbSet<GrantInfo> GrantInfos { get; set; }
     }
-        
 }

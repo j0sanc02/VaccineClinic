@@ -29,5 +29,10 @@ namespace UniversityofLouisvilleVaccine.Models
         
         public virtual ICollection<File> Files { get; set; }
         public virtual ICollection<FilePath> FilePaths { get; set; }
+
+        public object Split(char p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

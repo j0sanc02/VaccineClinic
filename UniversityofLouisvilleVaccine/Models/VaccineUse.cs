@@ -73,6 +73,7 @@ namespace UniversityofLouisvilleVaccine.Models
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime VaccineUseDate { get; set; }
 
+        
     }
 
 

@@ -44,13 +44,19 @@
                     </li>
                         <li>@Html.ActionLink("Appointments", "Index", "Appt")</li>
                         @*<li>@Html.ActionLink("Schedule an Appointment", "PatientCreate", "Appt")</li>*@
-                        <li>@Html.ActionLink("Grant Management", "Index", "Grant2")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Grant Management<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Grant", "Index", "Grants")</li>
+                            <li>@Html.ActionLink("Grant Info", "Index", "GInfo")</li>
+                        </ul>
+                    </li>
                         @*<li>@Html.ActionLink("Users", "Index", "User")</li>*@
                         <li>@Html.ActionLink("Users", "Index", "Account")</li>
                         <li>@Html.ActionLink("Roles", "Index", "Roles")</li>
-                        
-                    @Html.Partial("_LoginPartial")
-                </ul>
+
+                        @Html.Partial("_LoginPartial")
+                    </ul>
 
             </div>
         </div>

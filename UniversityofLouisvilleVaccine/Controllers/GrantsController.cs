@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using UniversityofLouisvilleVaccine.Models;
 using UniversityofLouisvilleVaccine.DataContexts;
 using System.IO;
+using System;
+
 
 namespace UniversityofLouisvilleVaccine.Controllers
 {
@@ -17,6 +19,9 @@ namespace UniversityofLouisvilleVaccine.Controllers
         // GET: /Grants/
         public ActionResult Index()
         {
+
+            string[] dirs = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + @"Documents\", "*.*");
+            ViewBag.filename = dirs.ToString();
             return View(db.Grant.ToList());
         }
 
@@ -46,7 +51,7 @@ namespace UniversityofLouisvilleVaccine.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,docType,fileName")]Grants grants, HttpPostedFileBase upload)
+        public ActionResult Create([Bind(Include = "id,docType,fileName,uploadDate")]Grants grants, HttpPostedFileBase upload)
         {
                                             
             if (ModelState.IsValid)
@@ -71,27 +76,11 @@ namespace UniversityofLouisvilleVaccine.Controllers
                         grants.FilePaths = new List<FilePath>();
                         grants.FilePaths.Add(document);
                         upload.SaveAs(Path.Combine(Server.MapPath("~/Documents"), document.FileName));
+                        
                     }
 
-
-
-                    //var document = new UniversityofLouisvilleVaccine.Models.File
-                    //{
-                    //      FileName = System.IO.Path.GetFileName(upload.FileName),
-                    //      FileType = FileType.Document,
-                    //      ContentType = upload.ContentType
-                    //};
-
-                    //using (var reader = new System.IO.BinaryReader(upload.InputStream))
-                    //{
-                    //    document.Content = reader.ReadBytes(upload.ContentLength);
-                    //}
-
-                    //grants.Files = new List<UniversityofLouisvilleVaccine.Models.File> { document };
-
                 }
-                
-                               
+                                               
                 db.Grant.Add(grants);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -120,10 +109,29 @@ namespace UniversityofLouisvilleVaccine.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="id,docType,fileName")] Grants grants)
+        public ActionResult Edit([Bind(Include = "id,docType,fileName,uploadDate")] Grants grants, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {
+
+                if (upload != null && upload.ContentLength > 0)
+                {
+
+                    if (upload != null && upload.ContentLength > 0)
+                    {
+                        var document = new FilePath
+                        {
+                            FileName = System.IO.Path.GetFileName(upload.FileName),
+                            FileType = FileType.Document
+                        };
+
+                        grants.FilePaths = new List<FilePath>();
+                        grants.FilePaths.Add(document);
+                        upload.SaveAs(Path.Combine(Server.MapPath("~/Documents"), document.FileName));
+                    }
+                    
+                }
+
                 db.Entry(grants).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -166,13 +174,23 @@ namespace UniversityofLouisvilleVaccine.Controllers
             base.Dispose(disposing);
         }
 
-        //public FileResult Download(string fileNameWithExtention)
-        //{
-        //    string path = AppDomain.CurrentDomain.BaseDirectory + "FileUploads/";
-        //    string fileName = fileNameWithExtention;
-        //    return File(path + fileName, "text/plain", "test.txt");
+        public FilePathResult DownloadFileFromAppServer(string fileNameWithExtention)
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory + "FileUploads/";
+            string fileName = fileNameWithExtention;
+            return File(path + fileName, "text/plain", "test.txt");
 
-        //}
+        }
+
+        public FileResult Download(string document)
+        {
+            
+            byte[] fileBytes = System.IO.File.ReadAllBytes(Path.Combine(Server.MapPath("~/Documents"), document));
+            string fileName = "myfile.ext";
+            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+        }
+
+
 
     }
 }
