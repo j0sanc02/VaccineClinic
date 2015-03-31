@@ -14,7 +14,7 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
     
     public class ApptController : Controller
     {
-        private ApptDBContext db = new ApptDBContext();
+         ApptDBContext db = new ApptDBContext();
 
         // GET: /Appt/
         //[Authorize(Roles = "Admin, Executive, ProgramStaff")]
@@ -182,36 +182,23 @@ namespace UniversityofLouisvilleVaccine.App_Start.Controllers
         //}
 
         //get list of Appointments today after button click
-        public string ReverseCalendar(string start)
+        public ActionResult ReverseCalendar(string start)
         {
+
+            ViewBag.date = DateTime.Today;
             
             //Appointment appointment = db.Appointments.Find(start);
 
-            return start;
+            return View(db.Appointments.ToList());
 
-           // return start;
-           // ApptDBContext db = new ApptDBContext();
-           // Appointment ap = new Appointment();
 
-           // string datestart = start;
+        }
 
-           // var query = 
-           //     from APT in db.Appointments 
-           //     where APT.start == datestart
-           //     select APT;
+        public ActionResult revcal(string start)
+        {
+            ViewBag.date = start;
 
-           // AppointmentLookupDBContext adc = new AppointmentLookupDBContext();
-
-           //// adc.
-
-           // List<Appointment> listofappt = new List<Appointment>();
-
-           // foreach (Appointment cp in query)
-           // {
-           //     listofappt.Add(cp);
-           // }
-
-           // return View(listofappt.ToList());
+            return View(db.Appointments.ToList());
         }
 
 

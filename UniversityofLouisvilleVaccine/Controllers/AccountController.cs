@@ -13,7 +13,7 @@ using UniversityofLouisvilleVaccine.DataContexts;
 
 namespace UniversityofLouisvilleVaccine.Controllers
 {
-    //[Authorize(Roles = "Admin, Executive")]
+    //[Authorize(Roles = "Admin, Executive, Program Staff, Researcher")]
     public class AccountController : Controller
     {
         public AccountController()

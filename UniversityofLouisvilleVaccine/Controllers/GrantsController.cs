@@ -33,6 +33,7 @@ namespace UniversityofLouisvilleVaccine.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Grants grants = db.Grant.Find(id);
+
             if (grants == null)
             {
                 return HttpNotFound();
@@ -76,14 +77,12 @@ namespace UniversityofLouisvilleVaccine.Controllers
                         grants.FilePaths = new List<FilePath>();
                         grants.FilePaths.Add(document);
                         upload.SaveAs(Path.Combine(Server.MapPath("~/Documents"), document.FileName));
-                        
                     }
 
+                    db.Grant.Add(grants);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
                 }
-                                               
-                db.Grant.Add(grants);
-                db.SaveChanges();
-                return RedirectToAction("Index");
             }
 
             return View(grants);
@@ -174,21 +173,20 @@ namespace UniversityofLouisvilleVaccine.Controllers
             base.Dispose(disposing);
         }
 
-        public FilePathResult DownloadFileFromAppServer(string fileNameWithExtention)
+        public FilePathResult Download(string document)
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory + "FileUploads/";
-            string fileName = fileNameWithExtention;
+            string path = AppDomain.CurrentDomain.BaseDirectory + "Documents/";
+            string fileName = document;
             return File(path + fileName, "text/plain", "test.txt");
 
         }
 
-        public FileResult Download(string document)
-        {
-            
-            byte[] fileBytes = System.IO.File.ReadAllBytes(Path.Combine(Server.MapPath("~/Documents"), document));
-            string fileName = "myfile.ext";
-            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
-        }
+        //public FileResult Download(string document)
+        //{
+        //    byte[] fileBytes = System.IO.File.ReadAllBytes(Path.Combine(Server.MapPath("~/Documents"), document));
+        //    string fileName = "myfile.ext";
+        //    return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+        //}
 
 
 
